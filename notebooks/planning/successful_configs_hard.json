@@ -1,0 +1,108 @@
+{
+    "packing_food_for_work": [
+        {
+            "scene_id": "Beechwood_0_int",
+            "instance_id": 0
+        },
+        {
+            "scene_id": "Beechwood_0_int",
+            "instance_id": 22
+        },
+        {
+            "scene_id": "Beechwood_0_int",
+            "instance_id": 24
+        },
+        {
+            "scene_id": "Ihlen_1_int",
+            "instance_id": 20
+        },
+        {
+            "scene_id": "Wainscott_0_int",
+            "instance_id": 0
+        },
+        {
+            "scene_id": "Wainscott_0_int",
+            "instance_id": 21
+        },
+        {
+            "scene_id": "Wainscott_0_int",
+            "instance_id": 23
+        }
+    ],
+    "cleaning_out_drawers": [
+        {
+            "scene_id": "Rs_int",
+            "instance_id": 23
+        },
+        {
+            "scene_id": "Rs_int",
+            "instance_id": 24
+        }
+    ],
+    "sorting_books": [
+        {
+            "scene_id": "Pomaria_1_int",
+            "instance_id": 20
+        },
+        {
+            "scene_id": "Pomaria_1_int",
+            "instance_id": 21
+        },
+        {
+            "scene_id": "Pomaria_1_int",
+            "instance_id": 23
+        },
+        {
+            "scene_id": "Rs_int",
+            "instance_id": 20
+        }
+    ],
+    "putting_away_toys": [
+        {
+            "scene_id": "Benevolence_1_int",
+            "instance_id": 0
+        },
+        {
+            "scene_id": "Benevolence_1_int",
+            "instance_id": 20
+        },
+        {
+            "scene_id": "Benevolence_1_int",
+            "instance_id": 22
+        },
+        {
+            "scene_id": "Benevolence_1_int",
+            "instance_id": 23
+        },
+        {
+            "scene_id": "Ihlen_0_int",
+            "instance_id": 20
+        },
+        {
+            "scene_id": "Ihlen_0_int",
+            "instance_id": 22
+        },
+        {
+            "scene_id": "Ihlen_0_int",
+            "instance_id": 23
+        },
+        {
+            "scene_id": "Ihlen_1_int",
+            "instance_id": 0
+        },
+        {
+            "scene_id": "Ihlen_1_int",
+            "instance_id": 21
+        },
+        {
+            "scene_id": "Ihlen_1_int",
+            "instance_id": 24
+        }
+    ],
+    "collect_misplaced_items": [
+        {
+            "scene_id": "Beechwood_0_int",
+            "instance_id": 0
+        }
+    ]
+}

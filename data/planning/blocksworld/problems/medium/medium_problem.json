@@ -1,0 +1,26 @@
+{
+    "problem_name": "medium_problem",
+    "blocks_config": {
+        "colors": [
+            "R",
+            "G",
+            "B",
+            "Y",
+            "O",
+            "P"
+        ],
+        "num": 5
+    },
+    "col_config": {
+        "names": [
+            "C1",
+            "C2",
+            "C3",
+            "C4",
+            "C5"
+        ]
+    },
+    "max_init_col_height": 4,
+    "min_plan_length": 5,
+    "max_plan_length": 10
+}

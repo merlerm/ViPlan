@@ -1,0 +1,71 @@
+name: viplan
+channels:
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - ipywidgets
+  - ipykernel
+  - transformers
+  - datasets
+  - huggingface_hub
+  - llama-cpp-python
+  # Compiler packages, must be supported by CUDA
+  # https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#host-compiler-support-policy
+  - compilers
+  - gcc>=11.4,<13.3
+  - gxx>=11.4,<13.3
+  - gfortran>=11.4,<13.3
+  - clang>=7,<20.0
+  # CUDA versions are determined by pytorch
+  - cudnn>=8.9.2,<10
+  - cuda-version>=12.4,<12.5
+  - cuda-compiler>=12.4,<12.5
+  - cuda-nvcc>=12.4,<12.5
+  - cuda-libraries-dev>=12.4,<12.5
+  - cmake
+  - llama-index
+  - llama-index-llms-openai
+  - llama-index-readers-file
+  - accelerate
+  - python-dotenv
+  - pillow-heif
+  - faiss-gpu
+  - flask
+  - pip
+  - pip:
+      - torch==2.6.0
+      - torchvision==0.21.0
+      - torchaudio==2.6.0
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - vllm==0.8.3
+      - peft
+      - bitsandbytes
+      - pymupdf4llm
+      - llama-index-llms-vllm
+      - llama-index-llms-huggingface
+      - llama-index-embeddings-huggingface
+      - llama-index-llms-huggingface-api
+      - mloggers
+      - fasteners
+      - fire
+      - unified_planning
+      - unified_planning[engines]
+      - timm
+      - backoff
+      - anthropic
+      - google-genai
+      # flash-attn must be installed manually with pip install flash-attn --no-build-isolation
+      # transformers can also be downgraded to 4.50.3 with pip install transformers==4.50.3 to run Molmo
+      # see https://huggingface.co/allenai/Molmo-7B-D-0924/discussions/44
+
+
+variables:
+  LLAMA_CUBLAS: 1
+  FORCE_CMAKE: 1
+  CMAKE_ARGS: "-DLLAMA_CUBLAS=on"

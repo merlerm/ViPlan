@@ -1,0 +1,132 @@
+{
+    "sorting_books_medium.pddl": {
+        "activity_name": "sorting_books",
+        "scene_instance_pairs": [
+            [
+                "Pomaria_1_int",
+                0
+            ],
+            [
+                "Pomaria_1_int",
+                20
+            ],
+            [
+                "Pomaria_1_int",
+                21
+            ],
+            [
+                "Pomaria_1_int",
+                23
+            ]
+        ]
+    },
+    "cleaning_out_drawers_medium.pddl": {
+        "activity_name": "cleaning_out_drawers",
+        "scene_instance_pairs": [
+            [
+                "Benevolence_1_int",
+                21
+            ],
+            [
+                "Rs_int",
+                0
+            ]
+        ]
+    },
+    "packing_food_for_work_medium.pddl": {
+        "activity_name": "packing_food_for_work",
+        "scene_instance_pairs": [
+            [
+                "Beechwood_0_int",
+                0
+            ],
+            [
+                "Beechwood_0_int",
+                20
+            ],
+            [
+                "Wainscott_0_int",
+                0
+            ],
+            [
+                "Wainscott_0_int",
+                20
+            ]
+        ]
+    },
+    "putting_away_toys_medium.pddl": {
+        "activity_name": "putting_away_toys",
+        "scene_instance_pairs": [
+            [
+                "Benevolence_1_int",
+                0
+            ],
+            [
+                "Benevolence_1_int",
+                21
+            ],
+            [
+                "Ihlen_0_int",
+                0
+            ],
+            [
+                "Ihlen_0_int",
+                20
+            ],
+            [
+                "Ihlen_1_int",
+                0
+            ]
+        ]
+    },
+    "collect_misplaced_items_medium.pddl": {
+        "activity_name": "collect_misplaced_items",
+        "scene_instance_pairs": [
+            [
+                "Beechwood_0_int",
+                23
+            ],
+            [
+                "Beechwood_0_int",
+                24
+            ],
+            [
+                "Merom_1_int",
+                0
+            ],
+            [
+                "Merom_1_int",
+                22
+            ]
+        ]
+    },
+    "sorting_groceries_medium.pddl": {
+        "activity_name": "sorting_groceries",
+        "scene_instance_pairs": [
+            [
+                "Beechwood_0_int",
+                23
+            ],
+            [
+                "Beechwood_0_int",
+                24
+            ],
+            [
+                "Beechwood_0_int",
+                29
+            ],
+            [
+                "Pomaria_1_int",
+                0
+            ],
+            [
+                "Pomaria_1_int",
+                20
+            ],
+            [
+                "Pomaria_1_int",
+                23
+            ]
+        ]
+    }
+}

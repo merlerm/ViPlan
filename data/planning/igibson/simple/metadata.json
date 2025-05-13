@@ -1,0 +1,127 @@
+{
+    "sorting_books_simple.pddl": {
+        "activity_name": "sorting_books",
+        "scene_instance_pairs": [
+            [
+                "Ihlen_0_int",
+                0
+            ],
+            [
+                "Ihlen_0_int",
+                20
+            ],
+            [
+                "Pomaria_1_int",
+                0
+            ],
+            [
+                "Pomaria_1_int",
+                20
+            ],
+            [
+                "Rs_int",
+                0
+            ]
+        ]
+    },
+    "cleaning_out_drawers_simple.pddl": {
+        "activity_name": "cleaning_out_drawers",
+        "scene_instance_pairs": [
+            [
+                "Benevolence_1_int",
+                0
+            ],
+            [
+                "Benevolence_1_int",
+                20
+            ],
+            [
+                "Benevolence_1_int",
+                21
+            ],
+            [
+                "Rs_int",
+                0
+            ],
+            [
+                "Rs_int",
+                20
+            ]
+        ]
+    },
+    "locking_every_door_simple.pddl": {
+        "activity_name": "locking_every_door",
+        "scene_instance_pairs": [
+            [
+                "Merom_1_int",
+                0
+            ],
+            [
+                "Merom_1_int",
+                20
+            ],
+            [
+                "Pomaria_0_int",
+                0
+            ],
+            [
+                "Pomaria_0_int",
+                20
+            ],
+            [
+                "Wainscott_1_int",
+                0
+            ]
+        ]
+    },
+    "locking_every_window_simple.pddl": {
+        "activity_name": "locking_every_window",
+        "scene_instance_pairs": [
+            [
+                "Merom_1_int",
+                0
+            ],
+            [
+                "Merom_1_int",
+                20
+            ],
+            [
+                "Rs_int",
+                0
+            ],
+            [
+                "Rs_int",
+                20
+            ],
+            [
+                "Wainscott_0_int",
+                0
+            ]
+        ]
+    },
+    "packing_food_for_work_simple.pddl": {
+        "activity_name": "packing_food_for_work",
+        "scene_instance_pairs": [
+            [
+                "Beechwood_0_int",
+                0
+            ],
+            [
+                "Beechwood_0_int",
+                20
+            ],
+            [
+                "Beechwood_0_int",
+                21
+            ],
+            [
+                "Wainscott_0_int",
+                0
+            ],
+            [
+                "Wainscott_0_int",
+                20
+            ]
+        ]
+    }
+}

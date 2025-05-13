@@ -1,0 +1,127 @@
+{
+    "organizing_file_cabinet_hard.pddl": {
+        "activity_name": "organizing_file_cabinet",
+        "scene_instance_pairs": [
+            [
+                "Beechwood_0_int",
+                20
+            ],
+            [
+                "Beechwood_0_int",
+                28
+            ],
+            [
+                "Pomaria_0_int",
+                20
+            ],
+            [
+                "Pomaria_0_int",
+                21
+            ]
+        ]
+    },
+    "cleaning_out_drawers_hard.pddl": {
+        "activity_name": "cleaning_out_drawers",
+        "scene_instance_pairs": [
+            [
+                "Benevolence_1_int",
+                0
+            ],
+            [
+                "Benevolence_1_int",
+                27
+            ],
+            [
+                "Benevolence_1_int",
+                28
+            ],
+            [
+                "Pomaria_1_int",
+                23
+            ],
+            [
+                "Rs_int",
+                0
+            ]
+        ]
+    },
+    "sorting_groceries_hard.pddl": {
+        "activity_name": "sorting_groceries",
+        "scene_instance_pairs": [
+            [
+                "Wainscott_0_int",
+                0
+            ],
+            [
+                "Wainscott_0_int",
+                20
+            ],
+            [
+                "Wainscott_0_int",
+                21
+            ],
+            [
+                "Wainscott_0_int",
+                23
+            ],
+            [
+                "Wainscott_0_int",
+                24
+            ],
+            [
+                "Wainscott_0_int",
+                26
+            ],
+            [
+                "Wainscott_0_int",
+                27
+            ]
+        ]
+    },
+    "organizing_boxes_in_garage_hard.pddl": {
+        "activity_name": "organizing_boxes_in_garage",
+        "scene_instance_pairs": [
+            [
+                "Ihlen_0_int",
+                22
+            ],
+            [
+                "Ihlen_0_int",
+                23
+            ],
+            [
+                "Ihlen_0_int",
+                26
+            ],
+            [
+                "Ihlen_0_int",
+                27
+            ],
+            [
+                "Ihlen_0_int",
+                29
+            ]
+        ]
+    },
+    "putting_away_toys_hard.pddl": {
+        "activity_name": "putting_away_toys",
+        "scene_instance_pairs": [
+            [
+                "Benevolence_1_int",
+                0
+            ],
+            [
+                "Benevolence_1_int",
+                20
+            ],
+            [
+                "Ihlen_0_int",
+                22
+            ],
+            [
+                "Ihlen_1_int",
+                0
+            ]
+        ]
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "problem_name": "simple_problem",
+    "blocks_config": {
+        "colors": [
+            "R",
+            "G",
+            "B",
+            "Y",
+            "O",
+            "P"
+        ],
+        "num": 3
+    },
+    "col_config": {
+        "names": [
+            "C1",
+            "C2",
+            "C3",
+            "C4"
+        ]
+    },
+    "max_init_col_height": 2,
+    "min_plan_length": 3,
+    "max_plan_length": 5
+}

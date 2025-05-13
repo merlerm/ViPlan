@@ -1,0 +1,1438 @@
+{
+    "hard_problem_0": {
+        "blocks": [
+            "Y",
+            "G",
+            "B",
+            "O",
+            "P",
+            "R"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "G",
+                    "Y"
+                ],
+                [
+                    "R",
+                    "B"
+                ],
+                [
+                    "P",
+                    "O"
+                ]
+            ],
+            "clear": [
+                "G",
+                "P",
+                "R"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C1"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C2"
+                ],
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "P",
+                    "C3"
+                ],
+                [
+                    "R",
+                    "C2"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "R",
+                    "Y"
+                ],
+                [
+                    "O",
+                    "G"
+                ]
+            ],
+            "clear": [
+                "B",
+                "O",
+                "P",
+                "R"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C3"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C2"
+                ],
+                [
+                    "O",
+                    "C1"
+                ],
+                [
+                    "P",
+                    "C4"
+                ],
+                [
+                    "R",
+                    "C3"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(p, c4)",
+            "moveblock(r, c3)",
+            "moveblock(g, c4)",
+            "moveblock(r, c4)",
+            "moveblock(y, c3)",
+            "moveblock(r, c3)",
+            "moveblock(g, c1)",
+            "moveblock(r, c4)",
+            "moveblock(y, c4)",
+            "moveblock(y, c1)",
+            "moveblock(o, c1)",
+            "moveblock(o, c4)",
+            "moveblock(y, c3)",
+            "moveblock(o, c1)",
+            "moveblock(r, c3)"
+        ]
+    },
+    "hard_problem_1": {
+        "blocks": [
+            "Y",
+            "P",
+            "O",
+            "B",
+            "R",
+            "G"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "P",
+                    "Y"
+                ],
+                [
+                    "R",
+                    "O"
+                ]
+            ],
+            "clear": [
+                "P",
+                "B",
+                "R",
+                "G"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C1"
+                ],
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "B",
+                    "C4"
+                ],
+                [
+                    "R",
+                    "C3"
+                ],
+                [
+                    "G",
+                    "C2"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "P",
+                    "Y"
+                ],
+                [
+                    "O",
+                    "P"
+                ],
+                [
+                    "B",
+                    "O"
+                ],
+                [
+                    "G",
+                    "B"
+                ]
+            ],
+            "clear": [
+                "R",
+                "G"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C1"
+                ],
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "O",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C1"
+                ],
+                [
+                    "R",
+                    "C4"
+                ],
+                [
+                    "G",
+                    "C1"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(g, c4)",
+            "moveblock(r, c4)",
+            "moveblock(o, c1)",
+            "moveblock(r, c3)",
+            "moveblock(g, c1)",
+            "moveblock(b, c1)",
+            "moveblock(r, c4)",
+            "moveblock(b, c2)",
+            "moveblock(g, c4)",
+            "moveblock(b, c1)",
+            "moveblock(g, c1)"
+        ]
+    },
+    "hard_problem_2": {
+        "blocks": [
+            "Y",
+            "G",
+            "O",
+            "R",
+            "P",
+            "B"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "G",
+                    "Y"
+                ],
+                [
+                    "O",
+                    "G"
+                ],
+                [
+                    "B",
+                    "O"
+                ],
+                [
+                    "P",
+                    "R"
+                ]
+            ],
+            "clear": [
+                "P",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C4"
+                ],
+                [
+                    "G",
+                    "C4"
+                ],
+                [
+                    "O",
+                    "C4"
+                ],
+                [
+                    "R",
+                    "C1"
+                ],
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C4"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "P",
+                    "O"
+                ],
+                [
+                    "B",
+                    "R"
+                ]
+            ],
+            "clear": [
+                "Y",
+                "G",
+                "P",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C2"
+                ],
+                [
+                    "G",
+                    "C3"
+                ],
+                [
+                    "O",
+                    "C4"
+                ],
+                [
+                    "R",
+                    "C1"
+                ],
+                [
+                    "P",
+                    "C4"
+                ],
+                [
+                    "B",
+                    "C1"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(p, c2)",
+            "moveblock(b, c1)",
+            "moveblock(o, c3)",
+            "moveblock(g, c3)",
+            "moveblock(p, c4)",
+            "moveblock(g, c4)",
+            "moveblock(o, c4)",
+            "moveblock(o, c1)",
+            "moveblock(g, c3)",
+            "moveblock(p, c3)",
+            "moveblock(y, c2)",
+            "moveblock(o, c4)",
+            "moveblock(p, c4)"
+        ]
+    },
+    "hard_problem_3": {
+        "blocks": [
+            "Y",
+            "G",
+            "P",
+            "R",
+            "O",
+            "B"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "R",
+                    "Y"
+                ],
+                [
+                    "P",
+                    "G"
+                ],
+                [
+                    "O",
+                    "P"
+                ]
+            ],
+            "clear": [
+                "R",
+                "O",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C2"
+                ],
+                [
+                    "G",
+                    "C3"
+                ],
+                [
+                    "P",
+                    "C3"
+                ],
+                [
+                    "R",
+                    "C2"
+                ],
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "B",
+                    "C1"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "O",
+                    "Y"
+                ],
+                [
+                    "R",
+                    "P"
+                ]
+            ],
+            "clear": [
+                "G",
+                "R",
+                "O",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "Y",
+                    "C3"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "P",
+                    "C2"
+                ],
+                [
+                    "R",
+                    "C2"
+                ],
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "B",
+                    "C4"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(b, c4)",
+            "moveblock(o, c4)",
+            "moveblock(p, c2)",
+            "moveblock(g, c1)",
+            "moveblock(p, c1)",
+            "moveblock(r, c4)",
+            "moveblock(y, c3)",
+            "moveblock(p, c2)",
+            "moveblock(r, c2)",
+            "moveblock(o, c3)"
+        ]
+    },
+    "hard_problem_4": {
+        "blocks": [
+            "R",
+            "O",
+            "P",
+            "B",
+            "G",
+            "Y"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "G",
+                    "P"
+                ],
+                [
+                    "Y",
+                    "G"
+                ]
+            ],
+            "clear": [
+                "R",
+                "O",
+                "B",
+                "Y"
+            ],
+            "inColumn": [
+                [
+                    "R",
+                    "C4"
+                ],
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C2"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "Y",
+                    "C1"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "B",
+                    "R"
+                ],
+                [
+                    "Y",
+                    "G"
+                ]
+            ],
+            "clear": [
+                "O",
+                "P",
+                "B",
+                "Y"
+            ],
+            "inColumn": [
+                [
+                    "R",
+                    "C2"
+                ],
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "P",
+                    "C4"
+                ],
+                [
+                    "B",
+                    "C2"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "Y",
+                    "C1"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(b, c1)",
+            "moveblock(r, c2)",
+            "moveblock(b, c2)",
+            "moveblock(y, c4)",
+            "moveblock(g, c4)",
+            "moveblock(g, c2)",
+            "moveblock(p, c4)",
+            "moveblock(g, c1)",
+            "moveblock(p, c3)",
+            "moveblock(y, c1)",
+            "moveblock(p, c4)"
+        ]
+    },
+    "hard_problem_5": {
+        "blocks": [
+            "P",
+            "R",
+            "G",
+            "Y",
+            "B",
+            "O"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "Y",
+                    "P"
+                ],
+                [
+                    "B",
+                    "R"
+                ]
+            ],
+            "clear": [
+                "G",
+                "Y",
+                "B",
+                "O"
+            ],
+            "inColumn": [
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "R",
+                    "C4"
+                ],
+                [
+                    "G",
+                    "C2"
+                ],
+                [
+                    "Y",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C4"
+                ],
+                [
+                    "O",
+                    "C3"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "R",
+                    "P"
+                ],
+                [
+                    "Y",
+                    "G"
+                ],
+                [
+                    "O",
+                    "Y"
+                ]
+            ],
+            "clear": [
+                "R",
+                "B",
+                "O"
+            ],
+            "inColumn": [
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "R",
+                    "C1"
+                ],
+                [
+                    "G",
+                    "C4"
+                ],
+                [
+                    "Y",
+                    "C4"
+                ],
+                [
+                    "B",
+                    "C3"
+                ],
+                [
+                    "O",
+                    "C4"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(y, c2)",
+            "moveblock(o, c2)",
+            "moveblock(b, c3)",
+            "moveblock(r, c1)",
+            "moveblock(o, c4)",
+            "moveblock(y, c4)",
+            "moveblock(y, c1)",
+            "moveblock(o, c1)",
+            "moveblock(g, c4)",
+            "moveblock(o, c4)",
+            "moveblock(o, c3)",
+            "moveblock(y, c4)",
+            "moveblock(o, c4)"
+        ]
+    },
+    "hard_problem_6": {
+        "blocks": [
+            "R",
+            "G",
+            "B",
+            "O",
+            "Y",
+            "P"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "B",
+                    "G"
+                ],
+                [
+                    "O",
+                    "B"
+                ]
+            ],
+            "clear": [
+                "R",
+                "O",
+                "Y",
+                "P"
+            ],
+            "inColumn": [
+                [
+                    "R",
+                    "C3"
+                ],
+                [
+                    "G",
+                    "C4"
+                ],
+                [
+                    "B",
+                    "C4"
+                ],
+                [
+                    "O",
+                    "C4"
+                ],
+                [
+                    "Y",
+                    "C2"
+                ],
+                [
+                    "P",
+                    "C1"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "Y",
+                    "R"
+                ],
+                [
+                    "B",
+                    "G"
+                ]
+            ],
+            "clear": [
+                "B",
+                "O",
+                "Y",
+                "P"
+            ],
+            "inColumn": [
+                [
+                    "R",
+                    "C3"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C1"
+                ],
+                [
+                    "O",
+                    "C4"
+                ],
+                [
+                    "Y",
+                    "C3"
+                ],
+                [
+                    "P",
+                    "C2"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(y, c3)",
+            "moveblock(o, c3)",
+            "moveblock(b, c1)",
+            "moveblock(g, c1)",
+            "moveblock(o, c4)",
+            "moveblock(g, c2)",
+            "moveblock(b, c4)",
+            "moveblock(p, c2)",
+            "moveblock(p, c4)",
+            "moveblock(g, c1)",
+            "moveblock(p, c2)",
+            "moveblock(b, c1)"
+        ]
+    },
+    "hard_problem_7": {
+        "blocks": [
+            "R",
+            "Y",
+            "P",
+            "G",
+            "O",
+            "B"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "P",
+                    "R"
+                ],
+                [
+                    "O",
+                    "Y"
+                ],
+                [
+                    "G",
+                    "P"
+                ]
+            ],
+            "clear": [
+                "G",
+                "O",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "R",
+                    "C1"
+                ],
+                [
+                    "Y",
+                    "C4"
+                ],
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "O",
+                    "C4"
+                ],
+                [
+                    "B",
+                    "C3"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "P",
+                    "Y"
+                ],
+                [
+                    "B",
+                    "G"
+                ]
+            ],
+            "clear": [
+                "R",
+                "P",
+                "O",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "R",
+                    "C2"
+                ],
+                [
+                    "Y",
+                    "C3"
+                ],
+                [
+                    "P",
+                    "C3"
+                ],
+                [
+                    "G",
+                    "C1"
+                ],
+                [
+                    "O",
+                    "C4"
+                ],
+                [
+                    "B",
+                    "C1"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(o, c1)",
+            "moveblock(y, c3)",
+            "moveblock(o, c4)",
+            "moveblock(g, c4)",
+            "moveblock(p, c3)",
+            "moveblock(r, c2)",
+            "moveblock(g, c1)",
+            "moveblock(p, c4)",
+            "moveblock(y, c4)",
+            "moveblock(y, c1)",
+            "moveblock(b, c1)",
+            "moveblock(b, c4)",
+            "moveblock(y, c3)",
+            "moveblock(b, c1)",
+            "moveblock(p, c3)"
+        ]
+    },
+    "hard_problem_8": {
+        "blocks": [
+            "G",
+            "P",
+            "O",
+            "R",
+            "Y",
+            "B"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "O",
+                    "P"
+                ],
+                [
+                    "R",
+                    "O"
+                ],
+                [
+                    "B",
+                    "R"
+                ]
+            ],
+            "clear": [
+                "G",
+                "Y",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "G",
+                    "C4"
+                ],
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "O",
+                    "C1"
+                ],
+                [
+                    "R",
+                    "C1"
+                ],
+                [
+                    "Y",
+                    "C3"
+                ],
+                [
+                    "B",
+                    "C1"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "Y",
+                    "G"
+                ],
+                [
+                    "O",
+                    "P"
+                ],
+                [
+                    "B",
+                    "Y"
+                ]
+            ],
+            "clear": [
+                "O",
+                "R",
+                "B"
+            ],
+            "inColumn": [
+                [
+                    "G",
+                    "C4"
+                ],
+                [
+                    "P",
+                    "C3"
+                ],
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "R",
+                    "C2"
+                ],
+                [
+                    "Y",
+                    "C4"
+                ],
+                [
+                    "B",
+                    "C4"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(b, c3)",
+            "moveblock(r, c2)",
+            "moveblock(o, c3)",
+            "moveblock(o, c4)",
+            "moveblock(b, c4)",
+            "moveblock(y, c4)",
+            "moveblock(p, c3)",
+            "moveblock(y, c1)",
+            "moveblock(b, c1)",
+            "moveblock(o, c3)",
+            "moveblock(b, c4)",
+            "moveblock(b, c3)",
+            "moveblock(y, c4)",
+            "moveblock(b, c4)"
+        ]
+    },
+    "hard_problem_9": {
+        "blocks": [
+            "O",
+            "P",
+            "B",
+            "Y",
+            "G",
+            "R"
+        ],
+        "init_predicates": {
+            "on": [
+                [
+                    "P",
+                    "O"
+                ],
+                [
+                    "Y",
+                    "P"
+                ]
+            ],
+            "clear": [
+                "B",
+                "Y",
+                "G",
+                "R"
+            ],
+            "inColumn": [
+                [
+                    "O",
+                    "C3"
+                ],
+                [
+                    "P",
+                    "C3"
+                ],
+                [
+                    "B",
+                    "C2"
+                ],
+                [
+                    "Y",
+                    "C3"
+                ],
+                [
+                    "G",
+                    "C4"
+                ],
+                [
+                    "R",
+                    "C1"
+                ]
+            ],
+            "rightOf": [
+                [
+                    "C2",
+                    "C1"
+                ],
+                [
+                    "C3",
+                    "C2"
+                ],
+                [
+                    "C4",
+                    "C3"
+                ]
+            ],
+            "leftOf": [
+                [
+                    "C1",
+                    "C2"
+                ],
+                [
+                    "C2",
+                    "C3"
+                ],
+                [
+                    "C3",
+                    "C4"
+                ]
+            ]
+        },
+        "goal_predicates": {
+            "on": [
+                [
+                    "P",
+                    "O"
+                ],
+                [
+                    "R",
+                    "B"
+                ]
+            ],
+            "clear": [
+                "P",
+                "Y",
+                "G",
+                "R"
+            ],
+            "inColumn": [
+                [
+                    "O",
+                    "C1"
+                ],
+                [
+                    "P",
+                    "C1"
+                ],
+                [
+                    "B",
+                    "C3"
+                ],
+                [
+                    "Y",
+                    "C2"
+                ],
+                [
+                    "G",
+                    "C4"
+                ],
+                [
+                    "R",
+                    "C3"
+                ]
+            ]
+        },
+        "reference_plan": [
+            "moveblock(y, c1)",
+            "moveblock(b, c3)",
+            "moveblock(y, c2)",
+            "moveblock(b, c4)",
+            "moveblock(p, c1)",
+            "moveblock(o, c1)",
+            "moveblock(b, c3)",
+            "moveblock(o, c2)",
+            "moveblock(p, c4)",
+            "moveblock(r, c3)",
+            "moveblock(o, c1)",
+            "moveblock(p, c1)"
+        ]
+    }
+}
