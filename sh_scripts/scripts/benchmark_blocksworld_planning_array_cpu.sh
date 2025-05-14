@@ -1,23 +1,18 @@
 #!/bin/bash -l
-#SBATCH --time=12:00:00
+#SBATCH --time=16:00:00
 #SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:1
 #SBATCH --mem=20G
-#SBATCH --gres=gpu:2
 #SBATCH --output=./slurm/%A_%a.out
-#SBATCH --array=0-14
+#SBATCH --array=0-5
+
+# GPU only used for rendering, not for LLM inference
 
 # Define the list of models and problem splits.
 models=(
-  "OpenGVLab/InternVL3-78B"
-  "Qwen/Qwen2.5-VL-72B-Instruct"
-  "google/gemma-3-27b-it"
-  "llava-hf/llava-onevision-qwen2-72b-ov-hf"
-  "CohereLabs/aya-vision-32b"
+  "gpt-4.1"
+  "gpt-4.1-nano"
 )
-
-# "allenai/Molmo-72B-0924" removed for now
-# with transformers == 0.50.3 we have https://github.com/allenai/molmo/issues/25
-# but with newer we have the tensorflow issue https://huggingface.co/allenai/Molmo-7B-D-0924/discussions/44
 
 splits=("simple" "medium" "hard")
 
@@ -35,7 +30,6 @@ model_short="${MODEL##*/}"
 GPU_RENDERING=true           # default value: can be true or false
 ENUMERATE_INITIAL_STATE=true # default value: can be true or false
 SEED=1                       # default seed value
-ENUM_BATCH_SIZE=4            # default batch size
 FAIL_PROBABILITY=0.0         # default fail probability
 PROMPT_PATH="data/prompts/benchmark/blocksworld/prompt.md"
 
@@ -58,10 +52,6 @@ while [[ $# -gt 0 ]]; do
       SEED="$2"
       shift 2
       ;;
-    --enum_batch_size)
-      ENUM_BATCH_SIZE="$2"
-      shift 2
-      ;;
     --fail_probability)
       FAIL_PROBABILITY="$2"
       shift 2
@@ -80,7 +70,9 @@ done
 echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED"
 
 # Hard coded root path, adjust as needed
-ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
+
+ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
 
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 
@@ -90,7 +82,7 @@ PROBLEMS_DIR="data/planning/blocksworld/problems/${PROBLEM_SPLIT}"
 if [ -n "$EXPERIMENT_NAME" ]; then
   OUTPUT_DIR="results/planning/blocksworld/${EXPERIMENT_NAME}/predicates/${PROBLEM_SPLIT}/${model_short}"
 else
-  OUTPUT_DIR="results/planning/blocksworld/${PROBLEM_SPLIT}/${model_short}"
+  OUTPUT_DIR="results/planning/blocksworld/${PROBLEM_SPLIT}/predicates/${model_short}"
 fi
 
 
@@ -118,7 +110,5 @@ python3 -m viplan.experiments.benchmark_blocksworld_plan \
   --problems_dir "$PROBLEMS_DIR" \
   --output_dir "$OUTPUT_DIR" \
   --seed "$SEED" \
-  --enum_batch_size "$ENUM_BATCH_SIZE" \
-  --tensor_parallel_size 2 \
   --fail_probability "$FAIL_PROBABILITY" \
-  $gpu_flag $enumerate_flag \
+  $gpu_flag $enumerate_flag

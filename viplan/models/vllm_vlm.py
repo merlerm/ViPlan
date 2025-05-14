@@ -57,13 +57,14 @@ class VllmVLM():
         self.logger.info(f"Loading model {self.model_name}")
         token = os.environ.get("HF_TOKEN", None)
         self.chat_special_tokens = None
+        allowed_local_media_path = '../'
         if "mistral-small" in self.model_name.lower(): # https://docs.vllm.ai/en/latest/getting_started/examples/vision_language_multi_image.html
             self.model = LLM(
                 model=model_name, 
                 tokenizer_mode="mistral",
                 config_format="mistral",
                 load_format="mistral",
-                allowed_local_media_path="/scratch/cs/world-models/predicate_datasets",  # Fix: provide actual path instead of boolean
+                allowed_local_media_path=allowed_local_media_path,  # Fix: provide actual path instead of boolean
                 dtype=self.dtype,
                 # enforce_eager=True,
                 disable_mm_preprocessor_cache=True,
@@ -77,7 +78,7 @@ class VllmVLM():
         elif "deepseek" in self.model_name.lower():
             self.model = LLM(
                 model=model_name, 
-                allowed_local_media_path="/scratch/cs/world-models/predicate_datasets",  # Fix: provide actual path instead of boolean
+                allowed_local_media_path=allowed_local_media_path,  # Fix: provide actual path instead of boolean
                 dtype=self.dtype,
                 # enforce_eager=True,
                 # disable_mm_preprocessor_cache=True,
@@ -90,7 +91,7 @@ class VllmVLM():
         elif "aya-vision" in self.model_name.lower():
             self.model = LLM(
                 model=model_name, 
-                allowed_local_media_path="/scratch/cs/world-models/predicate_datasets",  # Fix: provide actual path instead of boolean
+                allowed_local_media_path=allowed_local_media_path,  # Fix: provide actual path instead of boolean
                 dtype=self.dtype,
                 mm_processor_kwargs={"crop_to_patches": True},
                 download_dir=cache_dir,
@@ -101,7 +102,7 @@ class VllmVLM():
         elif "molmo" in self.model_name.lower():
             self.model = LLM(
                 model=model_name,
-                allowed_local_media_path="/scratch/cs/world-models/predicate_datasets",  # Fix: provide actual path instead of boolean
+                allowed_local_media_path=allowed_local_media_path,  # Fix: provide actual path instead of boolean
                 dtype=self.dtype,
                 download_dir=cache_dir,
                 trust_remote_code=True,

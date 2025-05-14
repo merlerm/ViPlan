@@ -80,7 +80,9 @@ done
 echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED"
 
 # Hard coded root path, adjust as needed
-ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
+
+ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
 
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 

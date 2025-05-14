@@ -15,11 +15,16 @@ The ViPlan benchmark is made up of several components, including the main experi
 
 ### Experiments
 
-To run the experiments, you need to install the required packages. We recommend using mamba and provide an environment file for easy installation:
-
+To run the experiments, you need to install the required packages. We recommend using mamba and provide an environment file for easy installation. The virtual environment requirements can be found at `environment.yml`, and it can be created as prefered. Here we report examples using `mamba` and `conda`.
+Using `mamba`:
 ```
-mamba env create -p ./viplan -f environment.yml
-mamba activate ./viplan
+mamba env create -p ./viplan_env -f environment.yml
+mamba activate ./viplan_env
+```
+Using `conda`:
+```
+conda env create -f environment.yml
+conda activate viplan_env
 ```
 
 If you wish to use Flash Attention, it needs to be installed separately with the following command:
@@ -42,6 +47,12 @@ rm blender-3.0.0-linux-x64.tar.xz
 
 #### iGibson
 
+##### Requirements
+Here is the list of specific requirements to use iGibson:
+- `apptainer` (former Singularity)
+- Encription key to be requested at [this link](https://docs.google.com/forms/d/e/1FAIpQLScPwhlUcHu_mwBqq5kQzT2VRIRwg_rJvF0IWYBk_LxEZiJIFg/viewform)
+
+
 The Household environment is instead based on a custom version of [iGibson](https://github.com/StanfordVL/iGibson). 
 To install the environment, first clone our fork of iGibson:
 
@@ -56,7 +67,7 @@ Since iGibson requires specific packages, we recommend running it inside a conta
 apptainer cache clean
 apptainer pull docker://igibson/igibson:latest
 ```
-This will create a file called `igibson_latest.sif`, which we expect to be in the root directory. This file is a Singularity image that contains all the dependencies needed to run iGibson. To open a shell inside the container run:
+This will create a file called `igibson_latest.sif`, which is expected to be in the root directory. This file is a Singularity image that contains all the dependencies needed to run iGibson. To open a shell inside the container run:
 ```bash
 apptainer exec --nv igibson_latest.sif bash
 ```
@@ -88,7 +99,7 @@ After this, the iGibson environment is ready to be used. For the benchmark, we u
 
 ## Benchmark
 
-To run the benchmark, we provide SLURM scripts that can be used to run the experiments on a cluster. The scripts are located in the `sh_scripts` folder and are designed to be run on SLURM clusters. If you are using a different cluster manager, you may need to modify the scripts accordingly, or directly run the Python scripts in the `viplan/experiments` directory.
+To run the benchmark, we provide bash scripts to run locally as well as SLURM scripts that can be used to run the experiments on a cluster. The scripts are located in the `sh_scripts` folder. If you are using a different cluster manager, you may need to modify the scripts at `sh_scripts/slurm_cluster` accordingly. You could also directly run the Python scripts in the `viplan/experiments` directory.
 
 In order to run some open-source models, you might need to accept their conditions on the huggingface hub. Then, you can include your token in the bash environment by running the following command:
 

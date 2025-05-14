@@ -1,24 +1,18 @@
 #!/bin/bash -l
 #SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=20G
 #SBATCH --gres=gpu:1
+#SBATCH --mem=20G
 #SBATCH --output=./slurm/%A_%a.out
-#SBATCH --array=0-26
+#SBATCH --array=0-5
+
+# GPU only used for rendering, not for LLM inference
 
 # Define the list of models and problem splits.
 models=(
-  "OpenGVLab/InternVL3-8B"
-  "Qwen/Qwen2.5-VL-7B-Instruct"
-  "google/gemma-3-12b-it"
-  "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
-  "allenai/Molmo-7B-D-0924"
-  "microsoft/Phi-4-multimodal-instruct"
-  "llava-hf/llava-onevision-qwen2-7b-ov-hf"
-  "deepseek-ai/deepseek-vl2"
-  "CohereLabs/aya-vision-8b"
+  "gpt-4.1"
+  "gpt-4.1-nano"
 )
-
 splits=("simple" "medium" "hard")
 max_steps=(10 20 30)
 
@@ -73,7 +67,8 @@ done
 echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED and max steps $MAX_STEPS"
 
 # Set file paths.
-ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
+ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 PROBLEMS_DIR="data/planning/blocksworld/problems/${PROBLEM_SPLIT}"
 
@@ -107,6 +102,6 @@ python3 -m viplan.experiments.benchmark_blocksworld_vila \
   --output_dir "$OUTPUT_DIR" \
   --seed "$SEED" \
   --max_steps $MAX_STEPS \
-  --max_new_tokens 3000 \
+  --max_new_tokens 4096 \
   --fail_probability $FAIL_PROBABILITY \
   $gpu_flag

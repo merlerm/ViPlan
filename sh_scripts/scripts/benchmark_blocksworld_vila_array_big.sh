@@ -73,7 +73,9 @@ done
 echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED and max steps $MAX_STEPS"
 
 # Set file paths.
-ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
+
+ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 PROBLEMS_DIR="data/planning/blocksworld/problems/${PROBLEM_SPLIT}"
 

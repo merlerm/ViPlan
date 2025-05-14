@@ -187,4 +187,5 @@ nohup*
 
 # local 
 molmo_commands_to_run.txt
-
+behavior/
+iGibson/

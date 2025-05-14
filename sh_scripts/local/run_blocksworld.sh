@@ -28,7 +28,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR=$PWD/"sh_scripts/scripts"
 echo "Script directory: $SCRIPT_DIR"
 
 if [ ${#forward_args[@]} -gt 0 ]; then
@@ -43,17 +43,17 @@ echo "Run vila:          $RUN_VILA"
 # predicates (planning) benchmarks
 if [[ "$RUN_PREDICATES" == "true" ]]; then
     if [[ "$RUN_CLOSED_SOURCE" == "true" ]]; then
-        sbatch "$SCRIPT_DIR/benchmark_blocksworld_planning_array_cpu.sh" "${forward_args[@]}"
+        bash "$SCRIPT_DIR/benchmark_blocksworld_planning_array_cpu.sh" "${forward_args[@]}"
     fi
-    sbatch "$SCRIPT_DIR/benchmark_blocksworld_planning_array_big.sh" "${forward_args[@]}"
-    sbatch "$SCRIPT_DIR/benchmark_blocksworld_planning_array.sh"     "${forward_args[@]}"
+    bash "$SCRIPT_DIR/benchmark_blocksworld_planning_array_big.sh" "${forward_args[@]}"
+    bash "$SCRIPT_DIR/benchmark_blocksworld_planning_array.sh"     "${forward_args[@]}"
 fi
 
 # vila benchmarks
 if [[ "$RUN_VILA" == "true" ]]; then
     if [[ "$RUN_CLOSED_SOURCE" == "true" ]]; then
-        sbatch "$SCRIPT_DIR/benchmark_blocksworld_vila_array_cpu.sh" "${forward_args[@]}"
+        bash "$SCRIPT_DIR/benchmark_blocksworld_vila_array_cpu.sh" "${forward_args[@]}"
     fi
-    sbatch "$SCRIPT_DIR/benchmark_blocksworld_vila_array_big.sh" "${forward_args[@]}"
-    sbatch "$SCRIPT_DIR/benchmark_blocksworld_vila_array.sh"     "${forward_args[@]}"
+    bash "$SCRIPT_DIR/benchmark_blocksworld_vila_array_big.sh" "${forward_args[@]}"
+    bash "$SCRIPT_DIR/benchmark_blocksworld_vila_array.sh"     "${forward_args[@]}"
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 # For triton usage
-module load libxi
+# module load libxi
 
 # Default values for arguments
 render_objects=""
@@ -38,7 +38,8 @@ echo "Renderer using gpu: $use_gpu"
 cd $root
 
 #blenderdir=$(echo blender-2.*/)
-blenderdir=$(echo blender-3.*/)
+# blenderdir=$(echo blender-3.*/)
+blenderdir=$(echo $root/blender-3.0.0-linux-x64)
 $blenderdir/blender -noaudio --background --python $root/viplan/rendering/blocksworld/render.py -- \
       --output-dir "$output_dir"                          \
       --render-num-samples 512                          \
