@@ -57,8 +57,6 @@ rm blender-3.0.0-linux-x64.tar.xz
 
 #### iGibson
 
-##### Requirements
-
 Here is the list of specific requirements to use iGibson:
 
 - `apptainer` (former Singularity)
@@ -128,3 +126,7 @@ export OPENAI_API_KEY=<your_key>
 export GEMINI_API_KEY=<your_key>
 export ANTHROPIC_API_KEY=<your_key>
 ```
+
+## Results
+
+We include all the results from the experiments reported in the paper in the `results` folder. To process and visualize them, we provide Jupyter notebooks in the `notebooks` folder. This reproduces exactly all the Figures and Tables reported in the paper.
