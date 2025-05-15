@@ -1,0 +1,61 @@
+# Base image with CUDA support for ML workloads
+FROM igibson/igibson:latest
+
+# Set environment variables to avoid interactive installation prompts
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=UTC
+
+# Install basic dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    wget \
+    git \
+    python3 \
+    python3-pip \
+    python3-dev \
+    ca-certificates \
+    build-essential \
+    curl \
+    xvfb \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    bzip2 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* 
+
+# # Install Miniconda (much smaller than Anaconda)
+# RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh \
+#     && bash /tmp/miniconda.sh -b -p /opt/conda \
+#     && rm /tmp/miniconda.sh
+
+# Add conda to path
+# ENV PATH="/opt/conda/bin:${PATH}"
+# Make conda activate command available
+# RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
+
+# Set working directory
+WORKDIR /app
+
+RUN git clone --depth 1 --single-branch --branch release_viplan https://github.com/nicoladainese96/iGibson.git ./iGibson --recursive
+RUN git clone https://github.com/StanfordVL/behavior.git
+
+
+RUN python -m venv ./igibson_env && \
+    . ./igibson_env/bin/activate && \
+    pip install wheel && \
+    pip install -e ./iGibson && \
+    pip install -e ./behavior && \
+    pip install notebook pyquaternion shapely uvicorn fastapi unified_planning && \
+    pip install unified_planning[engines]
+
+RUN wget --no-check-certificate https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz && \
+    mkdir -p ./iGibson/igibson/data && \
+    tar -xzvf ig_dataset.tar.gz -C ./iGibson/igibson/data && \
+    rm ig_dataset.tar.gz
+
+
+
+ENV PATH="/app/igibson_env/bin:$PATH"
+# Default command
+CMD ["bash"]
