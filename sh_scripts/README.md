@@ -7,15 +7,13 @@ The ViPlan benchmark is designed to be run on SLURM clusters, and the scripts in
 
 The "big" scripts are designed to run bigger VLMs that require two GPUs and the "cpu" scripts are designed to run API models that don't require GPUs (although a GPU is still requested for the renderer).
 
-The two main entry points are `run_blocksworld.sh` and `run_igibson.sh`, which are designed to run the Blocksworld and Household environments, respectively. The parameters are :
+The two main entry points are `run_blocksworld.sh` and `run_igibson.sh` (located at `sh_scripts/slurm_cluster` to run on SLURM clusters; at `sh_scripts/local` to run locally), which are designed to run the Blocksworld and Household environments. The parameters are :
 - `--experiment_name` argument can be passed to all scripts and specifies a specific name that will be used to save the results
 - `--run_predicates` boolean to determine whether to run experiments on the VLM-as-grounder setting
 - `--run_vila` boolean to determine whether to run experiments on the VLM-as-planner setting
 - `--run_closed_source` bolean to determine whether to run experiments using close-source models
 
 Check the individual scripts for more details on the arguments.
-
-The entrypoints for running on SLURM clusters are located at `sh_scripts/slurm_cluster`. The entrypoints for running locally are located at `sh_scripts/local`.
 
 
 Back to [Main Documentation](../README.md).

@@ -145,6 +145,7 @@ celerybeat.pid
 .venv
 env/
 venv/
+viplan_env/
 ENV/
 env.bak/
 venv.bak/
