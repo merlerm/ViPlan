@@ -146,6 +146,7 @@ celerybeat.pid
 env/
 venv/
 viplan_env/
+igibson_env/
 ENV/
 env.bak/
 venv.bak/
@@ -190,3 +191,4 @@ nohup*
 molmo_commands_to_run.txt
 behavior/
 iGibson/
+igibson.key

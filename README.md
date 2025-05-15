@@ -57,7 +57,7 @@ The Household environment is instead based on a custom version of [iGibson](http
 To install the environment, first clone our fork of iGibson:
 
 ```bash
-git clone --depth 1  https://github.com/nicoladainese96/iGibson.git ./iGibson --recursive
+git clone --depth 1 --single-branch --branch release_viplan https://github.com/nicoladainese96/iGibson.git ./iGibson --recursive
 git clone https://github.com/StanfordVL/behavior.git
 ```
 
@@ -89,7 +89,7 @@ To download the assets, run:
 
 ```bash
 cd iGibson
-wget https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz
+wget --no-check-certificate https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz
 tar -xzvf ig_dataset.tar.gz -C ./igibson/data
 ```
 
