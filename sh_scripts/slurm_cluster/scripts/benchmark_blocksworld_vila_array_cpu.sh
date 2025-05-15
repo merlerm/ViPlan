@@ -1,24 +1,18 @@
 #!/bin/bash -l
-#SBATCH --time=16:00:00
+#SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=4
+#SBATCH --gres=gpu:1
 #SBATCH --mem=20G
-#SBATCH --gres=gpu:2
 #SBATCH --output=./slurm/%A_%a.out
-#SBATCH --array=0-14
+#SBATCH --array=0-5
+
+# GPU only used for rendering, not for LLM inference
 
 # Define the list of models and problem splits.
 models=(
-  "OpenGVLab/InternVL3-78B"
-  "Qwen/Qwen2.5-VL-72B-Instruct"
-  "google/gemma-3-27b-it"
-  "llava-hf/llava-onevision-qwen2-72b-ov-hf"
-  "CohereLabs/aya-vision-32b"
+  "gpt-4.1"
+  "gpt-4.1-nano"
 )
-
-# "allenai/Molmo-72B-0924" removed for now
-# with transformers == 0.50.3 we have https://github.com/allenai/molmo/issues/25
-# but with newer we have the tensorflow issue https://huggingface.co/allenai/Molmo-7B-D-0924/discussions/44
-
 splits=("simple" "medium" "hard")
 max_steps=(10 20 30)
 
@@ -73,9 +67,7 @@ done
 echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED and max steps $MAX_STEPS"
 
 # Set file paths.
-
 ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 PROBLEMS_DIR="data/planning/blocksworld/problems/${PROBLEM_SPLIT}"
 
@@ -88,10 +80,7 @@ fi
 mkdir -p ./slurm
 
 # Load necessary modules and activate the environment.
-#module load gcc
-module load mamba
-#module load cuda/12.2.1
-source activate test_llm_env
+mamba activate viplan_env
 
 # Set GPU flag if needed.
 gpu_flag=""
@@ -109,7 +98,6 @@ python3 -m viplan.experiments.benchmark_blocksworld_vila \
   --output_dir "$OUTPUT_DIR" \
   --seed "$SEED" \
   --max_steps $MAX_STEPS \
-  --max_new_tokens 3000 \
-  --fail_probability "$FAIL_PROBABILITY" \
-  --tensor_parallel_size 2 \
+  --max_new_tokens 4096 \
+  --fail_probability $FAIL_PROBABILITY \
   $gpu_flag

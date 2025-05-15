@@ -1,4 +1,4 @@
-name: viplan
+name: viplan_env
 channels:
   - nvidia
   - conda-forge

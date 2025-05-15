@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH --time=04:00:00
+#SBATCH --time=12:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=20G
 #SBATCH --gres=gpu:1
@@ -20,46 +20,39 @@ models=(
 )
 
 splits=("simple" "medium" "hard")
+max_steps=(10 20 30)
 
 # Map the SLURM_ARRAY_TASK_ID to a model and a problem split.
 job_id=$SLURM_ARRAY_TASK_ID
 num_splits=${#splits[@]}
 model_index=$(( job_id / num_splits ))
 split_index=$(( job_id % num_splits ))
+max_steps_index=$(( job_id % num_splits ))
 
 MODEL="${models[$model_index]}"
 PROBLEM_SPLIT="${splits[$split_index]}"
+MAX_STEPS="${max_steps[$max_steps_index]}"
 model_short="${MODEL##*/}"
 
-# Default values for flags
-GPU_RENDERING=true           # default value: can be true or false
-ENUMERATE_INITIAL_STATE=true # default value: can be true or false
-SEED=1                       # default seed value
-ENUM_BATCH_SIZE=4            # default batch size
-FAIL_PROBABILITY=0.0         # default fail probability
-PROMPT_PATH="data/prompts/benchmark/blocksworld/prompt.md"
+# Default flag values.
+GPU_RENDERING=true
+SEED=1
+FAIL_PROBABILITY=0.0
+PROMPT_PATH="data/prompts/planning/vila_blocksworld_json.md"
 
-# Argument parsing for additional flags (if any)
+# Parse additional arguments.
 while [[ $# -gt 0 ]]; do
   case $1 in
     --gpu_rendering)
       GPU_RENDERING="$2"
       shift 2
       ;;
-    --enumerate_initial_state)
-      ENUMERATE_INITIAL_STATE="$2"
-      shift 2
-      ;;
-    --experiment_name)
-      EXPERIMENT_NAME="$2"
-      shift 2
-      ;;
     --seed)
       SEED="$2"
       shift 2
       ;;
-    --enum_batch_size)
-      ENUM_BATCH_SIZE="$2"
+    --experiment_name)
+      EXPERIMENT_NAME="$2"
       shift 2
       ;;
     --fail_probability)
@@ -67,7 +60,7 @@ while [[ $# -gt 0 ]]; do
       shift 2
       ;;
     --use_cot_prompt)
-      PROMPT_PATH="data/prompts/benchmark/blocksworld/prompt_cot.md"
+      PROMPT_PATH="data/prompts/planning/vila_blocksworld_json_cot.md"
       shift
       ;;
     *)
@@ -77,41 +70,31 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED"
+echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED and max steps $MAX_STEPS"
 
-# Hard coded root path, adjust as needed
-
+# Set file paths.
 ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-# ROOT_PATH="/scratch/cs/world-models/merlerm1/open-world-symbolic-planner"
-
+echo "Root path: $ROOT_PATH"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
-
-# Set problems directory based on problem split.
 PROBLEMS_DIR="data/planning/blocksworld/problems/${PROBLEM_SPLIT}"
 
 if [ -n "$EXPERIMENT_NAME" ]; then
-  OUTPUT_DIR="results/planning/blocksworld/${EXPERIMENT_NAME}/predicates/${PROBLEM_SPLIT}/${model_short}"
+  OUTPUT_DIR="results/planning/blocksworld/${EXPERIMENT_NAME}/vila/${PROBLEM_SPLIT}/${model_short}"
 else
-  OUTPUT_DIR="results/planning/blocksworld/${PROBLEM_SPLIT}/predicates/${model_short}"
+  OUTPUT_DIR="results/planning/blocksworld/${PROBLEM_SPLIT}/vila/${model_short}"
 fi
-
 
 mkdir -p ./slurm
 
-module load mamba
-source activate test_llm_env
+mamba activate viplan_env
 
+# Set GPU flag if needed.
 gpu_flag=""
-if [ "$GPU_RENDERING" = "true" || "$GPU_RENDERING" = true ]; then
-    gpu_flag="--gpu_rendering"
+if [ "$GPU_RENDERING" = "true" ] || [ "$GPU_RENDERING" = true ]; then
+  gpu_flag="--gpu_rendering"
 fi
 
-enumerate_flag=""
-if [[ "$ENUMERATE_INITIAL_STATE" == "true" || "$ENUMERATE_INITIAL_STATE" == true ]]; then
-    enumerate_flag="--enumerate_initial_state"
-fi
-
-python3 -m viplan.experiments.benchmark_blocksworld_plan \
+python3 -m viplan.experiments.benchmark_blocksworld_vila \
   --model_name "$MODEL" \
   --log_level "debug" \
   --root_path "$ROOT_PATH" \
@@ -120,6 +103,7 @@ python3 -m viplan.experiments.benchmark_blocksworld_plan \
   --problems_dir "$PROBLEMS_DIR" \
   --output_dir "$OUTPUT_DIR" \
   --seed "$SEED" \
-  --enum_batch_size "$ENUM_BATCH_SIZE" \
-  --fail_probability "$FAIL_PROBABILITY" \
-  $gpu_flag $enumerate_flag
+  --max_steps $MAX_STEPS \
+  --max_new_tokens 3000 \
+  --fail_probability $FAIL_PROBABILITY \
+  $gpu_flag

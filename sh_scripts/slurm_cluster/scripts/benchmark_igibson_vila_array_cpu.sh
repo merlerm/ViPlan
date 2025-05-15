@@ -75,7 +75,7 @@ BASE_URL="http://${NODE}:${PORT}"
 echo "Testing with BASE_URL=${BASE_URL}"
 
 # Load necessary modules and activate the environment.
-mamba activate test_llm_env
+mamba activate viplan_env
 
 # Set file paths.
 DOMAIN_FILE="data/planning/igibson/domain.pddl"

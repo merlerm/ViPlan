@@ -1,24 +1,17 @@
 #!/bin/bash -l
-#SBATCH --time=12:00:00
+#SBATCH --time=18:00:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=160G
 #SBATCH --gres=gpu:1
 #SBATCH --output=./slurm/%A_%a.out
-#SBATCH --array=0-26
+#SBATCH --array=0-5
 
 mkdir -p ./slurm
 
 # Define the list of models and problem splits.
 models=(
-  "OpenGVLab/InternVL3-8B"
-  "Qwen/Qwen2.5-VL-7B-Instruct"
-  "google/gemma-3-12b-it"
-  "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
-  "allenai/Molmo-7B-D-0924"
-  "microsoft/Phi-4-multimodal-instruct"
-  "llava-hf/llava-onevision-qwen2-7b-ov-hf"
-  "deepseek-ai/deepseek-vl2"
-  "CohereLabs/aya-vision-8b"
+  "gpt-4.1"
+  "gpt-4.1-nano"
 )
 
 splits=("simple" "medium" "hard")
@@ -71,11 +64,11 @@ done
 NODE=$(hostname -s)
 echo "Running server+client on node: $NODE"
 
-JOB_TYPE_IDX=0 # 0 for planning_array, 1 for planning_array_big, 2 for planning_array_cpu, 3-5 for vila_array
+JOB_TYPE_IDX=2 # 0 for planning_array, 1 for planning_array_big, 2 for planning_array_cpu, 3-5 for vila_array
 PORT=$((8000 + SLURM_ARRAY_TASK_ID + 100*JOB_TYPE_IDX)) 
 
 # Start server in background, on this same node
-srun --ntasks=1 --gres=gpu:1 --mem=80G --time=12:00:00 -w $NODE \
+srun --ntasks=1 --gres=gpu:1 --mem=80G --time=18:00:00 -w $NODE \
     make run PORT=$PORT &
 
 echo "Waiting for server to start..."
@@ -86,7 +79,7 @@ BASE_URL="http://${NODE}:${PORT}"
 echo "Testing with BASE_URL=${BASE_URL}"
 
 # Load necessary modules and activate the environment.
-mamba activate viplan
+mamba activate viplan_env
 
 # Set file paths.
 DOMAIN_FILE="data/planning/igibson/domain.pddl"
