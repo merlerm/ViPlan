@@ -6,7 +6,7 @@ This codebase contains the implementation of the ViPlan benchmark.
 The project is divided into the following main sections:
 - Source code: [viplan](viplan/README.md)
 - Notebooks: [notebooks](notebooks/README.md) (mostly to visualize results)
-- SLURM scripts: [sh_scripts](sh_scripts/README.md)
+- Scripts to run the benchmark: [sh_scripts](sh_scripts/README.md)
 - Data: [data](data/README.md)
 
 ## Installation
@@ -57,7 +57,7 @@ The Household environment is instead based on a custom version of [iGibson](http
 To install the environment, first clone our fork of iGibson:
 
 ```bash
-git clone --depth 1 https://github.com/nicoladainese96/iGibson.git ./iGibson --recursive
+git clone --depth 1  https://github.com/nicoladainese96/iGibson.git ./iGibson --recursive
 git clone https://github.com/StanfordVL/behavior.git
 ```
 
