@@ -10,15 +10,15 @@ mkdir -p ./slurm
 
 # Define the list of models and problem splits.
 models=(
-  "OpenGVLab/InternVL3-8B"
+  #"OpenGVLab/InternVL3-8B"
   "Qwen/Qwen2.5-VL-7B-Instruct"
-  "google/gemma-3-12b-it"
-  "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
-  "allenai/Molmo-7B-D-0924"
-  "microsoft/Phi-4-multimodal-instruct"
-  "llava-hf/llava-onevision-qwen2-7b-ov-hf"
-  "deepseek-ai/deepseek-vl2"
-  "CohereLabs/aya-vision-8b"
+  #"google/gemma-3-12b-it"
+  #"mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+  #"allenai/Molmo-7B-D-0924"
+  #"microsoft/Phi-4-multimodal-instruct"
+  #"llava-hf/llava-onevision-qwen2-7b-ov-hf"
+  #"deepseek-ai/deepseek-vl2"
+  #"CohereLabs/aya-vision-8b"
 )
 
 #splits=("simple" "medium" "hard")
@@ -57,6 +57,10 @@ while [[ $# -gt 0 ]]; do
       PROMPT_PATH="data/prompts/planning/vila_igibson_json_cot.md"
       shift
       ;;
+    --run_on_slurm)
+      RUN_ON_SLURM="$2"
+      shift
+      ;;
     *)
       echo "Unknown parameter: $1"
       exit 1
@@ -73,18 +77,21 @@ JOB_TYPE_IDX=3 # 0-2 for plan_array, 3 for vila_array, 4 for vila_array_big, 5 f
 PORT=$((8000 + SLURM_ARRAY_TASK_ID + 100*JOB_TYPE_IDX)) 
 
 # Start server in background, on this same node
-srun --ntasks=1 --gres=gpu:1 --mem=80G --time=12:00:00 -w $NODE \
-    make run PORT=$PORT &
-
-echo "Waiting for server to start..."
-sleep 120
-echo "Server should be running now."
+echo "Run on slurm: $RUN_ON_SLURM"
+if [[ "$RUN_ON_SLURM" == "true" ]]; then
+  srun --ntasks=1 --gres=gpu:1 --mem=80G --time=12:00:00 -w $NODE \
+      make run PORT=$PORT &
+  echo "Waiting for server to start..."
+  sleep 120
+  echo "Server should be running now."
+fi
 
 BASE_URL="http://${NODE}:${PORT}"
 echo "Testing with BASE_URL=${BASE_URL}"
 
 # Load necessary modules and activate the environment.
 mamba activate test_llm_env
+echo "Which python: $(which python)"
 
 # Set file paths.
 DOMAIN_FILE="data/planning/igibson/domain.pddl"
@@ -96,7 +103,19 @@ else
   OUTPUT_DIR="results/planning/igibson/${PROBLEM_SPLIT}/vila/${model_short}"
 fi
 
-python3 -m viplan.experiments.benchmark_igibson_vila \
+# Dynamically find the igibson Python or fall back to current environment
+if mamba env list | grep -q "igibson"; then
+  echo "Found igibson environment, activating it..."
+  mamba activate igibson
+  IGIBSON_PYTHON=$(which python)
+else
+  echo "Using current environment Python..."
+  IGIBSON_PYTHON=$(which python)
+fi
+conda deactivate
+echo "Python executable: $IGIBSON_PYTHON"
+echo ""
+/scratch/cs/world-models/ferrazzp1/ViPlan/igibson_env/bin/python -m viplan.experiments.benchmark_igibson_vila \
     --base_url "${BASE_URL}" \
     --model_name "${MODEL}" \
     --domain_file  "$DOMAIN_FILE"\

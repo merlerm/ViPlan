@@ -90,6 +90,7 @@ To download the assets, run:
 ```bash
 cd iGibson
 wget --no-check-certificate https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz
+mkdir /igibson/data
 tar -xzvf ig_dataset.tar.gz -C ./igibson/data
 ```
 
