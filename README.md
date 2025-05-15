@@ -1,9 +1,13 @@
 # ViPlan: A Benchmark for Visual Planning with Symbolic Predicates and Vision-Language Models
 
-This codebase contains the implementation of the ViPlan benchmark. 
+This codebase contains the implementation of the ViPlan benchmark.
+
+![ViPlan](img/overview.png)
 
 ## Project structure
+
 The project is divided into the following main sections:
+
 - Source code: [viplan](viplan/README.md)
 - Notebooks: [notebooks](notebooks/README.md) (mostly to visualize results)
 - Scripts to run the benchmark: [sh_scripts](sh_scripts/README.md)
@@ -17,12 +21,15 @@ The ViPlan benchmark is made up of several components, including the main experi
 
 To run the experiments, you need to install the required packages. We recommend using mamba and provide an environment file for easy installation. The virtual environment requirements can be found at `environment.yml`, and it can be created as prefered. Here we report examples using `mamba` and `conda`.
 Using `mamba`:
-```
+
+```bash
 mamba env create -p ./viplan_env -f environment.yml
 mamba activate ./viplan_env
 ```
+
 Using `conda`:
-```
+
+```bash
 conda env create -f environment.yml
 conda activate viplan_env
 ```
@@ -51,10 +58,11 @@ rm blender-3.0.0-linux-x64.tar.xz
 #### iGibson
 
 ##### Requirements
+
 Here is the list of specific requirements to use iGibson:
+
 - `apptainer` (former Singularity)
 - Encription key to be requested at [this link](https://docs.google.com/forms/d/e/1FAIpQLScPwhlUcHu_mwBqq5kQzT2VRIRwg_rJvF0IWYBk_LxEZiJIFg/viewform)
-
 
 The Household environment is instead based on a custom version of [iGibson](https://github.com/StanfordVL/iGibson). 
 To install the environment, first clone our fork of iGibson:
@@ -112,6 +120,7 @@ In order to run some open-source models, you might need to accept their conditio
 ```bash
 export HF_TOKEN=<your_token>
 ```
+
 Similarly, in order to run closed-source models, include your API key in the bash environment by running the following command:
 
 ```bash
