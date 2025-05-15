@@ -76,6 +76,8 @@ Then, install the iGibson dependencies from inside the container:
 
 ```bash
 python -m venv --system-site-packages ./igibson_env
+conda create -n igibson_env 
+source activate igibson_env
 source igibson_env/bin/activate
 pip install -e ./iGibson
 pip install -e ./behavior
@@ -90,7 +92,7 @@ To download the assets, run:
 ```bash
 cd iGibson
 wget --no-check-certificate https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz
-mkdir /igibson/data
+mkdir igibson/data
 tar -xzvf ig_dataset.tar.gz -C ./igibson/data
 ```
 

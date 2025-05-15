@@ -91,7 +91,6 @@ echo "Testing with BASE_URL=${BASE_URL}"
 
 # Load necessary modules and activate the environment.
 mamba activate test_llm_env
-echo "Which python: $(which python)"
 
 # Set file paths.
 DOMAIN_FILE="data/planning/igibson/domain.pddl"
@@ -103,19 +102,7 @@ else
   OUTPUT_DIR="results/planning/igibson/${PROBLEM_SPLIT}/vila/${model_short}"
 fi
 
-# Dynamically find the igibson Python or fall back to current environment
-if mamba env list | grep -q "igibson"; then
-  echo "Found igibson environment, activating it..."
-  mamba activate igibson
-  IGIBSON_PYTHON=$(which python)
-else
-  echo "Using current environment Python..."
-  IGIBSON_PYTHON=$(which python)
-fi
-conda deactivate
-echo "Python executable: $IGIBSON_PYTHON"
-echo ""
-/scratch/cs/world-models/ferrazzp1/ViPlan/igibson_env/bin/python -m viplan.experiments.benchmark_igibson_vila \
+python3 -m viplan.experiments.benchmark_igibson_vila \
     --base_url "${BASE_URL}" \
     --model_name "${MODEL}" \
     --domain_file  "$DOMAIN_FILE"\
