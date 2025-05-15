@@ -1,0 +1,96 @@
+model,split,success rate,accuracy,cot,success rate error,accuracy error
+InternVL3 78B,simple,0.12,0.71,no,0.06,0.01
+InternVL3 78B,medium,0.0,0.68,no,0.0,0.01
+InternVL3 78B,hard,0.0,0.65,no,0.0,0.01
+InternVL3 8B,simple,0.0,0.73,no,0.0,0.01
+InternVL3 8B,medium,0.0,0.78,no,0.0,0.0
+InternVL3 8B,hard,0.04,0.78,no,0.04,0.01
+Mistral-Small-3.1 24B,simple,0.0,0.69,no,0.0,0.01
+Mistral-Small-3.1 24B,medium,0.0,0.83,no,0.0,0.0
+Mistral-Small-3.1 24B,hard,0.0,0.83,no,0.0,0.0
+Molmo 7B,simple,0.0,0.6,no,0.0,0.02
+Molmo 7B,hard,0.0,0.67,no,0.0,0.0
+Phi-4 Multimodal,simple,0.04,0.31,no,0.04,0.02
+Phi-4 Multimodal,medium,0.0,0.22,no,0.0,0.01
+Phi-4 Multimodal,hard,0.0,0.33,no,0.0,0.01
+Qwen2.5-VL 72B,simple,0.04,0.72,no,0.04,0.01
+Qwen2.5-VL 72B,medium,0.0,0.8,no,0.0,0.0
+Qwen2.5-VL 72B,hard,0.0,0.78,no,0.0,0.0
+Qwen2.5-VL 7B,simple,0.0,0.73,no,0.0,0.01
+Qwen2.5-VL 7B,medium,0.04,0.81,no,0.04,0.0
+Qwen2.5-VL 7B,hard,0.0,0.82,no,0.0,0.0
+AyaVision 32B,simple,0.04,0.61,no,0.04,0.02
+AyaVision 32B,medium,0.0,0.65,no,0.0,0.01
+AyaVision 32B,hard,0.0,0.65,no,0.0,0.01
+AyaVision 8B,simple,0.0,0.46,no,0.0,0.02
+AyaVision 8B,medium,0.0,0.44,no,0.0,0.01
+AyaVision 8B,hard,0.0,0.44,no,0.0,0.01
+DeepSeek-VL2,simple,0.12,0.71,no,0.06,0.01
+DeepSeek-VL2,medium,0.0,0.75,no,0.0,0.0
+DeepSeek-VL2,hard,0.0,0.75,no,0.0,0.01
+Gemma-3 12B,simple,0.16,0.52,no,0.07,0.02
+Gemma-3 12B,medium,0.0,0.68,no,0.0,0.01
+Gemma-3 12B,hard,0.0,0.59,no,0.0,0.01
+Gemma-3 27B,simple,0.08,0.67,no,0.05,0.01
+Gemma-3 27B,medium,0.0,0.77,no,0.0,0.0
+Gemma-3 27B,hard,0.08,0.75,no,0.05,0.0
+GPT-4.1,simple,0.16,0.68,no,0.07,0.01
+GPT-4.1,medium,0.0,0.74,no,0.0,0.01
+GPT-4.1,hard,0.0,0.7,no,0.0,0.01
+GPT-4.1 Nano,simple,0.04,0.54,no,0.04,0.01
+GPT-4.1 Nano,medium,0.0,0.6,no,0.0,0.01
+GPT-4.1 Nano,hard,0.0,0.53,no,0.0,0.01
+LLaVA-Onevision 72B,simple,0.0,0.64,no,0.0,0.02
+LLaVA-Onevision 72B,medium,0.0,0.8,no,0.0,0.01
+LLaVA-Onevision 72B,hard,0.0,0.75,no,0.0,0.01
+LLaVA-Onevision 7B,simple,0.04,0.59,no,0.04,0.01
+LLaVA-Onevision 7B,medium,0.0,0.68,no,0.0,0.01
+LLaVA-Onevision 7B,hard,0.0,0.69,no,0.0,0.01
+InternVL3 78B,simple,0.28,0.66,yes,0.09,0.01
+InternVL3 78B,medium,0.0,0.69,yes,0.0,0.01
+InternVL3 78B,hard,0.04,0.7,yes,0.04,0.01
+InternVL3 8B,simple,0.08,0.62,yes,0.05,0.01
+InternVL3 8B,medium,0.0,0.59,yes,0.0,0.01
+InternVL3 8B,hard,0.0,0.56,yes,0.0,0.01
+Mistral-Small-3.1 24B,simple,0.04,0.6,yes,0.04,0.02
+Mistral-Small-3.1 24B,medium,0.0,0.64,yes,0.0,0.01
+Mistral-Small-3.1 24B,hard,0.0,0.67,yes,0.0,0.01
+Molmo 7B,simple,0.0,0.68,yes,0.0,0.01
+Molmo 7B,medium,0.0,0.71,yes,0.0,0.01
+Molmo 7B,hard,0.0,0.78,yes,0.0,0.0
+Phi-4 Multimodal,simple,0.0,0.05,yes,0.0,0.03
+Phi-4 Multimodal,medium,0.0,0.02,yes,0.0,0.0
+Phi-4 Multimodal,hard,0.0,0.17,yes,0.0,0.02
+Qwen2.5-VL 72B,simple,0.0,0.7,yes,0.0,0.01
+Qwen2.5-VL 72B,medium,0.0,0.75,yes,0.0,0.01
+Qwen2.5-VL 72B,hard,0.0,0.76,yes,0.0,0.0
+Qwen2.5-VL 7B,simple,0.04,0.68,yes,0.04,0.01
+Qwen2.5-VL 7B,medium,0.0,0.73,yes,0.0,0.0
+Qwen2.5-VL 7B,hard,0.04,0.62,yes,0.04,0.0
+AyaVision 32B,simple,0.04,0.72,yes,0.04,0.01
+AyaVision 32B,medium,0.0,0.75,yes,0.0,0.0
+AyaVision 32B,hard,0.0,0.74,yes,0.0,0.01
+AyaVision 8B,simple,0.0,0.67,yes,0.0,0.01
+AyaVision 8B,medium,0.0,0.7,yes,0.0,0.01
+AyaVision 8B,hard,0.0,0.69,yes,0.0,0.0
+DeepSeek-VL2,simple,0.0,0.69,yes,0.0,0.01
+DeepSeek-VL2,medium,0.0,0.7,yes,0.0,0.0
+DeepSeek-VL2,hard,0.0,0.68,yes,0.0,0.01
+Gemma-3 12B,simple,0.12,0.65,yes,0.06,0.01
+Gemma-3 12B,medium,0.0,0.58,yes,0.0,0.01
+Gemma-3 12B,hard,0.0,0.6,yes,0.0,0.01
+Gemma-3 27B,simple,0.12,0.7,yes,0.06,0.01
+Gemma-3 27B,medium,0.0,0.68,yes,0.0,0.01
+Gemma-3 27B,hard,0.0,0.66,yes,0.0,0.0
+GPT-4.1,simple,0.2,0.69,yes,0.08,0.01
+GPT-4.1,medium,0.04,0.72,yes,0.04,0.01
+GPT-4.1,hard,0.0,0.71,yes,0.0,0.0
+GPT-4.1 Nano,simple,0.04,0.67,yes,0.04,0.01
+GPT-4.1 Nano,medium,0.0,0.72,yes,0.0,0.01
+GPT-4.1 Nano,hard,0.0,0.66,yes,0.0,0.01
+LLaVA-Onevision 72B,simple,0.0,0.69,yes,0.0,0.02
+LLaVA-Onevision 72B,medium,0.04,0.79,yes,0.04,0.01
+LLaVA-Onevision 72B,hard,0.0,0.78,yes,0.0,0.02
+LLaVA-Onevision 7B,simple,0.04,0.58,yes,0.04,0.01
+LLaVA-Onevision 7B,medium,0.0,0.65,yes,0.0,0.01
+LLaVA-Onevision 7B,hard,0.0,0.7,yes,0.0,0.01
