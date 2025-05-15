@@ -34,6 +34,9 @@ pip install flash-attn --no-build-isolation
 pip install flashinfer-python -i https://flashinfer.ai/whl/cu124/torch2.6/
 ```
 
+> [!WARNING]
+> At the time of writing, Molmo has [an issue](https://huggingface.co/allenai/Molmo-7B-D-0924/discussions/44) with the latest version of `transformers` (>= 4.51.0). To run Molmo, please downgrade `transformers` to version 4.50.3 with `pip install transformers==4.50.3`.
+
 ### Environments
 
 The Blocksworld environment is based on the [Photorealistic Blocksworld](https://github.com/IBM/photorealistic-blocksworld) renderer, which is based on Blender. To install the Blender-based renderer, from the root directory of the repository, run the following commands:
