@@ -77,9 +77,14 @@ Since iGibson requires specific packages, we recommend running it inside a conta
 apptainer cache clean
 apptainer pull docker://igibson/igibson:latest
 ```
-This will create a file called `igibson_latest.sif`, which is expected to be in the root directory. This file is a Singularity image that contains all the dependencies needed to run iGibson. To open a shell inside the container run:
+This will create a file called `igibson_latest.sif` (it should take approximately 15 minutes), which is expected to be in the root directory. This file is a Singularity image that contains all the dependencies needed to run iGibson. To open a shell inside the container run:
 ```bash
 apptainer exec --nv igibson_latest.sif bash
+```
+
+Please notice that to install iGibson, there must be a GPU available. To do that in a SLURM cluster, do for example:
+```bash
+srun --gpus=1 --mem=40GB --pty apptainer exec --nv igibson_latest.sif bash	
 ```
 
 Then, install the iGibson dependencies from inside the container:
@@ -93,7 +98,7 @@ pip install notebook pyquaternion shapely uvicorn fastapi unified_planning
 pip install unified_planning[engines]
 ```
 
-Afterwards, the iGibson custom assets need to be downloaded and decrypted using the encryption key provided by the iGibson team, following the instructions at [this page](https://stanfordvl.github.io/iGibson/dataset.html):
+Afterwards, the iGibson custom assets need to be downloaded following the instructions at [this page](https://stanfordvl.github.io/iGibson/dataset.html):
 
 To download the assets, run:
 
@@ -104,7 +109,7 @@ mkdir igibson/data
 tar -xzvf ig_dataset.tar.gz -C ./igibson/data
 ```
 
-As some of the assets are encrypted, you will need to decrypt them using the key provided by the iGibson team. The key can be requested by filling out the form at [this link](https://docs.google.com/forms/d/e/1FAIpQLScPwhlUcHu_mwBqq5kQzT2VRIRwg_rJvF0IWYBk_LxEZiJIFg/viewform) and then needs to be placed inside the `iGibson` folder under `igibson/data/igibson.key`.
+As some of the assets are encrypted, you will need to download the key provided by the iGibson team. The key can be requested by filling out the form at [this link](https://docs.google.com/forms/d/e/1FAIpQLScPwhlUcHu_mwBqq5kQzT2VRIRwg_rJvF0IWYBk_LxEZiJIFg/viewform) and then needs to be placed inside the `iGibson` folder under `igibson/data/igibson.key`.
 
 After this, the iGibson environment is ready to be used. For the benchmark, we use a client-server architecture, where the server runs inside the container and the client runs in the main execution environment. Scripts are provided in the `sh_scripts` folder to run the server and the client.
 
