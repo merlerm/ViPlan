@@ -28,7 +28,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-SCRIPT_DIR=$PWD/"sh_scripts/scripts"
+SCRIPT_DIR=$PWD/"sh_scripts/slurm_cluser/scripts"
 echo "Script directory: $SCRIPT_DIR"
 
 if [ ${#forward_args[@]} -gt 0 ]; then

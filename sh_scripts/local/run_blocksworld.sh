@@ -33,7 +33,7 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-SCRIPT_DIR=$PWD/"sh_scripts/scripts"
+SCRIPT_DIR=$PWD/"sh_scripts/local/scripts"
 echo "Script directory: $SCRIPT_DIR"
 
 if [ ${#forward_args[@]} -gt 0 ]; then
@@ -49,7 +49,7 @@ echo "Run big:           $RUN_BIG"
 # predicates (planning) benchmarks
 if [[ "$RUN_PREDICATES" == "true" ]]; then
     if [[ "$RUN_CLOSED_SOURCE" == "true" ]]; then
-        bash "$SCRIPT_DIR/benchmark_blocksworld_planning_array_cpu.sh" "${forward_args[@]}"
+        bash "$SCRIPT_DIR/benchmark_blocksworld_planning_array_closed.sh" "${forward_args[@]}"
     fi
     if [[ "$RUN_BIG" == "true" ]]; then
         bash "$SCRIPT_DIR/benchmark_blocksworld_planning_array_big.sh" "${forward_args[@]}"
@@ -60,7 +60,7 @@ fi
 # vila benchmarks
 if [[ "$RUN_VILA" == "true" ]]; then
     if [[ "$RUN_CLOSED_SOURCE" == "true" ]]; then
-        bash "$SCRIPT_DIR/benchmark_blocksworld_vila_array_cpu.sh" "${forward_args[@]}"
+        bash "$SCRIPT_DIR/benchmark_blocksworld_vila_array_closed.sh" "${forward_args[@]}"
     fi
     if [[ "$RUN_BIG" == "true" ]]; then
         bash "$SCRIPT_DIR/benchmark_blocksworld_vila_array_big.sh" "${forward_args[@]}"

@@ -1,6 +1,4 @@
 #!/bin/bash
-# For triton usage
-# module load libxi
 
 # Default values for arguments
 render_objects=""

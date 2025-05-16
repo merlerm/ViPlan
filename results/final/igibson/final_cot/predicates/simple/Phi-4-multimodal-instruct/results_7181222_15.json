@@ -1,0 +1,1227 @@
+{
+    "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Benevolence_1_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(bowl_1)",
+            "navigate-to(sink_1)",
+            "place-on(bowl_1, sink_1)"
+        ]
+    },
+    "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Benevolence_1_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(bowl_1)",
+            "navigate-to(sink_1)",
+            "place-on(bowl_1, sink_1)"
+        ]
+    },
+    "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Benevolence_1_int_21": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(bowl_1)",
+            "navigate-to(sink_1)",
+            "place-on(bowl_1, sink_1)"
+        ]
+    },
+    "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Rs_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(bowl_1)",
+            "navigate-to(sink_1)",
+            "place-on(bowl_1, sink_1)"
+        ]
+    },
+    "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Rs_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(bowl_1)",
+            "navigate-to(sink_1)",
+            "place-on(bowl_1, sink_1)"
+        ]
+    },
+    "data/planning/igibson/simple/sorting_books_simple.pddl_Ihlen_0_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "grasp(hardback_1)",
+            "navigate-to(shelf_1)",
+            "place-on(hardback_1, shelf_1)"
+        ]
+    },
+    "data/planning/igibson/simple/sorting_books_simple.pddl_Ihlen_0_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "grasp(hardback_1)",
+            "navigate-to(shelf_1)",
+            "place-on(hardback_1, shelf_1)"
+        ]
+    },
+    "data/planning/igibson/simple/sorting_books_simple.pddl_Pomaria_1_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "grasp(hardback_1)",
+            "navigate-to(shelf_1)",
+            "place-on(hardback_1, shelf_1)"
+        ]
+    },
+    "data/planning/igibson/simple/sorting_books_simple.pddl_Pomaria_1_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "grasp(hardback_1)",
+            "navigate-to(shelf_1)",
+            "place-on(hardback_1, shelf_1)"
+        ]
+    },
+    "data/planning/igibson/simple/sorting_books_simple.pddl_Rs_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "grasp(hardback_1)",
+            "navigate-to(shelf_1)",
+            "place-on(hardback_1, shelf_1)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_door_simple.pddl_Merom_1_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [
+            {
+                "action": "navigate-to(door_1)",
+                "action_correct": true,
+                "action_state_correct": true,
+                "preconditions_results": {},
+                "non_visible_precond_results": {
+                    "reachable door_1": [
+                        true,
+                        false,
+                        false
+                    ],
+                    "all_correct": true
+                },
+                "effects_results": {
+                    "reachable door_1": [
+                        "yes",
+                        0.047169577330350876,
+                        0.0008639409206807613,
+                        "The agent is a robotic arm, and it is positioned in such a way that it is reaching towards the door. The door is within the range of the agent's arm, so the answer is yes.",
+                        true,
+                        "<explanation>\nThe agent is a robotic arm, and it is positioned in such a way that it is reaching towards the door. The door is within the range of the agent's arm, so the answer is yes.\n</explanation>\n<answer>\nYes\n</answer>",
+                        true
+                    ],
+                    "all_correct": true,
+                    "all_state_correct": true,
+                    "updated_non_visible_preds": {
+                        "reachable door_2": {
+                            "before": false,
+                            "after": false
+                        }
+                    }
+                },
+                "action_info": "success"
+            }
+        ],
+        "replans": [],
+        "remaining_actions": [
+            "navigate-to(door_2)",
+            "close-container(door_2)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_door_simple.pddl_Merom_1_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [
+            {
+                "action": "navigate-to(door_1)",
+                "action_correct": true,
+                "action_state_correct": true,
+                "preconditions_results": {},
+                "non_visible_precond_results": {
+                    "reachable door_1": [
+                        true,
+                        false,
+                        false
+                    ],
+                    "all_correct": true
+                },
+                "effects_results": {
+                    "reachable door_1": [
+                        "yes",
+                        0.0754251554608345,
+                        0.0012191340792924166,
+                        "The agent is a robotic arm that is positioned near the door. The door is within the range of the agent's arm, as it is close enough to be considered in reach. Therefore, the answer is \"Yes\".",
+                        true,
+                        "<explanation>\nThe agent is a robotic arm that is positioned near the door. The door is within the range of the agent's arm, as it is close enough to be considered in reach. Therefore, the answer is \"Yes\".\n</explanation>\n<answer>\nYes\n</answer>",
+                        true
+                    ],
+                    "all_correct": true,
+                    "all_state_correct": true,
+                    "updated_non_visible_preds": {
+                        "reachable door_2": {
+                            "before": false,
+                            "after": false
+                        }
+                    }
+                },
+                "action_info": "success"
+            }
+        ],
+        "replans": [],
+        "remaining_actions": [
+            "navigate-to(door_2)",
+            "close-container(door_2)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_door_simple.pddl_Pomaria_0_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(door_1)",
+            "navigate-to(door_2)",
+            "close-container(door_2)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_door_simple.pddl_Pomaria_0_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(door_1)",
+            "navigate-to(door_2)",
+            "close-container(door_2)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_door_simple.pddl_Wainscott_1_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(door_1)",
+            "navigate-to(door_2)",
+            "close-container(door_2)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_window_simple.pddl_Merom_1_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(window_1)",
+            "navigate-to(window_2)",
+            "close-container(window_2)",
+            "navigate-to(window_3)",
+            "close-container(window_3)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_window_simple.pddl_Merom_1_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(window_1)",
+            "navigate-to(window_2)",
+            "close-container(window_2)",
+            "navigate-to(window_3)",
+            "close-container(window_3)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_window_simple.pddl_Rs_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(window_1)",
+            "navigate-to(window_2)",
+            "close-container(window_2)",
+            "navigate-to(window_3)",
+            "close-container(window_3)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_window_simple.pddl_Rs_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(window_1)",
+            "navigate-to(window_2)",
+            "close-container(window_2)",
+            "navigate-to(window_3)",
+            "close-container(window_3)"
+        ]
+    },
+    "data/planning/igibson/simple/locking_every_window_simple.pddl_Wainscott_0_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "close-container(window_1)",
+            "navigate-to(window_2)",
+            "close-container(window_2)",
+            "navigate-to(window_3)",
+            "close-container(window_3)"
+        ]
+    },
+    "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Beechwood_0_int_0": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(snack_food_1)",
+            "navigate-to(carton_1)",
+            "place-inside(snack_food_1, carton_1)"
+        ]
+    },
+    "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Beechwood_0_int_20": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(snack_food_1)",
+            "navigate-to(carton_1)",
+            "place-inside(snack_food_1, carton_1)"
+        ]
+    },
+    "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Beechwood_0_int_21": {
+        "all_correct": true,
+        "goal_reached": false,
+        "action_results": [],
+        "replans": [],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(snack_food_1)",
+            "navigate-to(carton_1)",
+            "place-inside(snack_food_1, carton_1)"
+        ]
+    },
+    "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Wainscott_0_int_0": {
+        "all_correct": false,
+        "goal_reached": false,
+        "action_results": [
+            {
+                "action": "navigate-to(cabinet_1)",
+                "action_correct": false,
+                "action_state_correct": false,
+                "preconditions_results": {
+                    "reachable cabinet_1": [
+                        "yes",
+                        0.20337122678756714,
+                        0.07481609284877777,
+                        "The agent is a robotic arm that can hold objects. The cabinet_1 is located in the kitchen area, which is within the reach of the agent. Therefore, the answer is \"Yes\".",
+                        false,
+                        "<explanation>\nThe agent is a robotic arm that can hold objects. The cabinet_1 is located in the kitchen area, which is within the reach of the agent. Therefore, the answer is \"Yes\".\n</explanation>\n<answer>\nYes\n</answer>",
+                        false
+                    ],
+                    "all_correct": false,
+                    "all_state_correct": false
+                },
+                "non_visible_precond_results": {
+                    "all_correct": true
+                },
+                "effects_results": null,
+                "action_info": null
+            }
+        ],
+        "replans": [
+            {
+                "enum_results": {
+                    "reachable carton_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "reachable countertop_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "reachable electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "reachable apple_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "reachable cabinet_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "reachable juice_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "open carton_1": [
+                        "invalid answer",
+                        "yes"
+                    ],
+                    "open electric_refrigerator_1": [
+                        "no",
+                        "no"
+                    ],
+                    "open cabinet_1": [
+                        "no",
+                        "no"
+                    ],
+                    "holding countertop_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "holding apple_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop countertop_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop countertop_1,electric_refrigerator_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "ontop countertop_1,apple_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "ontop countertop_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop countertop_1,juice_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,countertop_1": [
+                        "invalid answer",
+                        "yes"
+                    ],
+                    "ontop apple_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,juice_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside countertop_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside countertop_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside countertop_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside apple_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside apple_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside apple_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,apple_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,juice_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto apple_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto apple_1,countertop_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "nextto apple_1,electric_refrigerator_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "nextto apple_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto apple_1,juice_1": [
+                        "invalid answer",
+                        "yes"
+                    ]
+                },
+                "enum_metrics": {
+                    "accuracy": 0.05405405405405406,
+                    "yes_accuracy": 0.0,
+                    "yes_correct": 0,
+                    "yes_total": 3,
+                    "no_accuracy": 0.058823529411764705,
+                    "no_correct": 2,
+                    "no_total": 34,
+                    "predicates": {
+                        "reachable": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": null,
+                            "yes_correct": 0,
+                            "yes_total": 0,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 6
+                        },
+                        "open": {
+                            "accuracy": 0.6666666666666666,
+                            "yes_accuracy": 0.0,
+                            "yes_correct": 0,
+                            "yes_total": 1,
+                            "no_accuracy": 1.0,
+                            "no_correct": 2,
+                            "no_total": 2
+                        },
+                        "holding": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": null,
+                            "yes_correct": 0,
+                            "yes_total": 0,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 2
+                        },
+                        "ontop": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": 0.0,
+                            "yes_correct": 0,
+                            "yes_total": 1,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 9
+                        },
+                        "inside": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": null,
+                            "yes_correct": 0,
+                            "yes_total": 0,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 6
+                        },
+                        "nextto": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": 0.0,
+                            "yes_correct": 0,
+                            "yes_total": 1,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 9
+                        }
+                    }
+                }
+            }
+        ],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(snack_food_1)",
+            "navigate-to(carton_1)",
+            "place-inside(snack_food_1, carton_1)"
+        ]
+    },
+    "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Wainscott_0_int_20": {
+        "all_correct": false,
+        "goal_reached": false,
+        "action_results": [
+            {
+                "action": "navigate-to(cabinet_1)",
+                "action_correct": false,
+                "action_state_correct": false,
+                "preconditions_results": {
+                    "reachable cabinet_1": [
+                        "yes",
+                        0.20337122678756714,
+                        0.07481609284877777,
+                        "The agent is a robotic arm that can hold objects. The cabinet_1 is located in the kitchen area, which is within the reach of the agent. Therefore, the answer is \"Yes\".",
+                        false,
+                        "<explanation>\nThe agent is a robotic arm that can hold objects. The cabinet_1 is located in the kitchen area, which is within the reach of the agent. Therefore, the answer is \"Yes\".\n</explanation>\n<answer>\nYes\n</answer>",
+                        false
+                    ],
+                    "all_correct": false,
+                    "all_state_correct": false
+                },
+                "non_visible_precond_results": {
+                    "all_correct": true
+                },
+                "effects_results": null,
+                "action_info": null
+            }
+        ],
+        "replans": [
+            {
+                "enum_results": {
+                    "reachable carton_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "reachable countertop_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "reachable electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "reachable apple_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "reachable cabinet_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "reachable juice_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "open carton_1": [
+                        "invalid answer",
+                        "yes"
+                    ],
+                    "open electric_refrigerator_1": [
+                        "no",
+                        "no"
+                    ],
+                    "open cabinet_1": [
+                        "no",
+                        "no"
+                    ],
+                    "holding countertop_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "holding apple_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop countertop_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop countertop_1,electric_refrigerator_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "ontop countertop_1,apple_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "ontop countertop_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop countertop_1,juice_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,countertop_1": [
+                        "invalid answer",
+                        "yes"
+                    ],
+                    "ontop apple_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "ontop apple_1,juice_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside countertop_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside countertop_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside countertop_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside apple_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside apple_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "inside apple_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,electric_refrigerator_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,apple_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto countertop_1,juice_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto apple_1,carton_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto apple_1,countertop_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "nextto apple_1,electric_refrigerator_1": [
+                        "yes",
+                        "no"
+                    ],
+                    "nextto apple_1,cabinet_1": [
+                        "invalid answer",
+                        "no"
+                    ],
+                    "nextto apple_1,juice_1": [
+                        "invalid answer",
+                        "yes"
+                    ]
+                },
+                "enum_metrics": {
+                    "accuracy": 0.05405405405405406,
+                    "yes_accuracy": 0.0,
+                    "yes_correct": 0,
+                    "yes_total": 3,
+                    "no_accuracy": 0.058823529411764705,
+                    "no_correct": 2,
+                    "no_total": 34,
+                    "predicates": {
+                        "reachable": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": null,
+                            "yes_correct": 0,
+                            "yes_total": 0,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 6
+                        },
+                        "open": {
+                            "accuracy": 0.6666666666666666,
+                            "yes_accuracy": 0.0,
+                            "yes_correct": 0,
+                            "yes_total": 1,
+                            "no_accuracy": 1.0,
+                            "no_correct": 2,
+                            "no_total": 2
+                        },
+                        "holding": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": null,
+                            "yes_correct": 0,
+                            "yes_total": 0,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 2
+                        },
+                        "ontop": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": 0.0,
+                            "yes_correct": 0,
+                            "yes_total": 1,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 9
+                        },
+                        "inside": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": null,
+                            "yes_correct": 0,
+                            "yes_total": 0,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 6
+                        },
+                        "nextto": {
+                            "accuracy": 0.0,
+                            "yes_accuracy": 0.0,
+                            "yes_correct": 0,
+                            "yes_total": 1,
+                            "no_accuracy": 0.0,
+                            "no_correct": 0,
+                            "no_total": 9
+                        }
+                    }
+                }
+            }
+        ],
+        "remaining_actions": [
+            "open-container(cabinet_1)",
+            "grasp(snack_food_1)",
+            "navigate-to(carton_1)",
+            "place-inside(snack_food_1, carton_1)"
+        ]
+    },
+    "problem_stats": {
+        "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Benevolence_1_int_0": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(bowl_1)",
+                "navigate-to(sink_1)",
+                "place-on(bowl_1, sink_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Benevolence_1_int_20": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(bowl_1)",
+                "navigate-to(sink_1)",
+                "place-on(bowl_1, sink_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Benevolence_1_int_21": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(bowl_1)",
+                "navigate-to(sink_1)",
+                "place-on(bowl_1, sink_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Rs_int_0": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(bowl_1)",
+                "navigate-to(sink_1)",
+                "place-on(bowl_1, sink_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/cleaning_out_drawers_simple.pddl_Rs_int_20": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(bowl_1)",
+                "navigate-to(sink_1)",
+                "place-on(bowl_1, sink_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/sorting_books_simple.pddl_Ihlen_0_int_0": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "grasp(hardback_1)",
+                "navigate-to(shelf_1)",
+                "place-on(hardback_1, shelf_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/sorting_books_simple.pddl_Ihlen_0_int_20": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "grasp(hardback_1)",
+                "navigate-to(shelf_1)",
+                "place-on(hardback_1, shelf_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/sorting_books_simple.pddl_Pomaria_1_int_0": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "grasp(hardback_1)",
+                "navigate-to(shelf_1)",
+                "place-on(hardback_1, shelf_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/sorting_books_simple.pddl_Pomaria_1_int_20": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "grasp(hardback_1)",
+                "navigate-to(shelf_1)",
+                "place-on(hardback_1, shelf_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/sorting_books_simple.pddl_Rs_int_0": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "grasp(hardback_1)",
+                "navigate-to(shelf_1)",
+                "place-on(hardback_1, shelf_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_door_simple.pddl_Merom_1_int_0": {
+            "action_correct": 1,
+            "action_total": 3,
+            "remaining_actions": [
+                "navigate-to(door_2)",
+                "close-container(door_2)"
+            ],
+            "action_accuracy": 0.3333333333333333,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_door_simple.pddl_Merom_1_int_20": {
+            "action_correct": 1,
+            "action_total": 3,
+            "remaining_actions": [
+                "navigate-to(door_2)",
+                "close-container(door_2)"
+            ],
+            "action_accuracy": 0.3333333333333333,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_door_simple.pddl_Pomaria_0_int_0": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "close-container(door_1)",
+                "navigate-to(door_2)",
+                "close-container(door_2)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_door_simple.pddl_Pomaria_0_int_20": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "close-container(door_1)",
+                "navigate-to(door_2)",
+                "close-container(door_2)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_door_simple.pddl_Wainscott_1_int_0": {
+            "action_correct": 0,
+            "action_total": 3,
+            "remaining_actions": [
+                "close-container(door_1)",
+                "navigate-to(door_2)",
+                "close-container(door_2)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_window_simple.pddl_Merom_1_int_0": {
+            "action_correct": 0,
+            "action_total": 5,
+            "remaining_actions": [
+                "close-container(window_1)",
+                "navigate-to(window_2)",
+                "close-container(window_2)",
+                "navigate-to(window_3)",
+                "close-container(window_3)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_window_simple.pddl_Merom_1_int_20": {
+            "action_correct": 0,
+            "action_total": 5,
+            "remaining_actions": [
+                "close-container(window_1)",
+                "navigate-to(window_2)",
+                "close-container(window_2)",
+                "navigate-to(window_3)",
+                "close-container(window_3)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_window_simple.pddl_Rs_int_0": {
+            "action_correct": 0,
+            "action_total": 5,
+            "remaining_actions": [
+                "close-container(window_1)",
+                "navigate-to(window_2)",
+                "close-container(window_2)",
+                "navigate-to(window_3)",
+                "close-container(window_3)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_window_simple.pddl_Rs_int_20": {
+            "action_correct": 0,
+            "action_total": 5,
+            "remaining_actions": [
+                "close-container(window_1)",
+                "navigate-to(window_2)",
+                "close-container(window_2)",
+                "navigate-to(window_3)",
+                "close-container(window_3)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/locking_every_window_simple.pddl_Wainscott_0_int_0": {
+            "action_correct": 0,
+            "action_total": 5,
+            "remaining_actions": [
+                "close-container(window_1)",
+                "navigate-to(window_2)",
+                "close-container(window_2)",
+                "navigate-to(window_3)",
+                "close-container(window_3)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Beechwood_0_int_0": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(snack_food_1)",
+                "navigate-to(carton_1)",
+                "place-inside(snack_food_1, carton_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Beechwood_0_int_20": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(snack_food_1)",
+                "navigate-to(carton_1)",
+                "place-inside(snack_food_1, carton_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Beechwood_0_int_21": {
+            "action_correct": 0,
+            "action_total": 4,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(snack_food_1)",
+                "navigate-to(carton_1)",
+                "place-inside(snack_food_1, carton_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Wainscott_0_int_0": {
+            "action_correct": 0,
+            "action_total": 5,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(snack_food_1)",
+                "navigate-to(carton_1)",
+                "place-inside(snack_food_1, carton_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        },
+        "data/planning/igibson/simple/packing_food_for_work_simple.pddl_Wainscott_0_int_20": {
+            "action_correct": 0,
+            "action_total": 5,
+            "remaining_actions": [
+                "open-container(cabinet_1)",
+                "grasp(snack_food_1)",
+                "navigate-to(carton_1)",
+                "place-inside(snack_food_1, carton_1)"
+            ],
+            "action_accuracy": 0.0,
+            "failed": false
+        }
+    },
+    "predicate_stats": {
+        "reachable": {
+            "accuracy": 0.0,
+            "yes_accuracy": 0,
+            "yes_correct": 0,
+            "yes_total": 0,
+            "no_accuracy": 0.0,
+            "no_correct": 0,
+            "no_total": 12,
+            "correct": 0,
+            "total": 12
+        },
+        "open": {
+            "accuracy": 0.6666666666666666,
+            "yes_accuracy": 0.0,
+            "yes_correct": 0,
+            "yes_total": 2,
+            "no_accuracy": 1.0,
+            "no_correct": 4,
+            "no_total": 4,
+            "correct": 4,
+            "total": 6
+        },
+        "holding": {
+            "accuracy": 0.0,
+            "yes_accuracy": 0,
+            "yes_correct": 0,
+            "yes_total": 0,
+            "no_accuracy": 0.0,
+            "no_correct": 0,
+            "no_total": 4,
+            "correct": 0,
+            "total": 4
+        },
+        "ontop": {
+            "accuracy": 0.0,
+            "yes_accuracy": 0.0,
+            "yes_correct": 0,
+            "yes_total": 2,
+            "no_accuracy": 0.0,
+            "no_correct": 0,
+            "no_total": 18,
+            "correct": 0,
+            "total": 20
+        },
+        "inside": {
+            "accuracy": 0.0,
+            "yes_accuracy": 0,
+            "yes_correct": 0,
+            "yes_total": 0,
+            "no_accuracy": 0.0,
+            "no_correct": 0,
+            "no_total": 12,
+            "correct": 0,
+            "total": 12
+        },
+        "nextto": {
+            "accuracy": 0.0,
+            "yes_accuracy": 0.0,
+            "yes_correct": 0,
+            "yes_total": 2,
+            "no_accuracy": 0.0,
+            "no_correct": 0,
+            "no_total": 18,
+            "correct": 0,
+            "total": 20
+        }
+    },
+    "predicate_accuracy": 0.05405405405405406,
+    "macro_predicate_accuracy": 0.1111111111111111,
+    "action_accuracy": 0.020618556701030927,
+    "task_accuracy": 0.0,
+    "fail_ratio": 0.0,
+    "metadata": {
+        "model_name": "microsoft/Phi-4-multimodal-instruct",
+        "prompt_path": "data/prompts/benchmark/igibson/prompt_cot.md",
+        "problems_dir": "data/planning/igibson/simple",
+        "seed": 1,
+        "replan": true,
+        "fail_probability": 0.0,
+        "enumerate_initial_state": false,
+        "job_id": "7181222_15"
+    }
+}

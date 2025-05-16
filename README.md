@@ -1,9 +1,13 @@
 # ViPlan: A Benchmark for Visual Planning with Symbolic Predicates and Vision-Language Models
 
-This codebase contains the implementation of the ViPlan benchmark. 
+This codebase contains the implementation of the ViPlan benchmark.
+
+![ViPlan](img/overview.png)
 
 ## Project structure
+
 The project is divided into the following main sections:
+
 - Source code: [viplan](viplan/README.md)
 - Notebooks: [notebooks](notebooks/README.md) (mostly to visualize results)
 - Scripts to run the benchmark: [sh_scripts](sh_scripts/README.md)
@@ -17,12 +21,15 @@ The ViPlan benchmark is made up of several components, including the main experi
 
 To run the experiments, you need to install the required packages. We recommend using mamba and provide an environment file for easy installation. The virtual environment requirements can be found at `environment.yml`, and it can be created as prefered. Here we report examples using `mamba` and `conda`.
 Using `mamba`:
-```
+
+```bash
 mamba env create -p ./viplan_env -f environment.yml
 mamba activate ./viplan_env
 ```
+
 Using `conda`:
-```
+
+```bash
 conda env create -f environment.yml
 conda activate viplan_env
 ```
@@ -33,6 +40,9 @@ If you wish to use Flash Attention, it needs to be installed separately with the
 pip install flash-attn --no-build-isolation
 pip install flashinfer-python -i https://flashinfer.ai/whl/cu124/torch2.6/
 ```
+
+> [!WARNING]
+> At the time of writing, Molmo has [an issue](https://huggingface.co/allenai/Molmo-7B-D-0924/discussions/44) with the latest version of `transformers` (>= 4.51.0). To run Molmo, please downgrade `transformers` to version 4.50.3 with `pip install transformers==4.50.3`.
 
 ### Environments
 
@@ -47,11 +57,10 @@ rm blender-3.0.0-linux-x64.tar.xz
 
 #### iGibson
 
-##### Requirements
 Here is the list of specific requirements to use iGibson:
+
 - `apptainer` (former Singularity)
 - Encription key to be requested at [this link](https://docs.google.com/forms/d/e/1FAIpQLScPwhlUcHu_mwBqq5kQzT2VRIRwg_rJvF0IWYBk_LxEZiJIFg/viewform)
-
 
 The Household environment is instead based on a custom version of [iGibson](https://github.com/StanfordVL/iGibson). 
 To install the environment, first clone our fork of iGibson:
@@ -109,6 +118,7 @@ In order to run some open-source models, you might need to accept their conditio
 ```bash
 export HF_TOKEN=<your_token>
 ```
+
 Similarly, in order to run closed-source models, include your API key in the bash environment by running the following command:
 
 ```bash
@@ -116,3 +126,7 @@ export OPENAI_API_KEY=<your_key>
 export GEMINI_API_KEY=<your_key>
 export ANTHROPIC_API_KEY=<your_key>
 ```
+
+## Results
+
+We include all the results from the experiments reported in the paper in the `results` folder. To process and visualize them, we provide Jupyter notebooks in the `notebooks` folder. This reproduces exactly all the Figures and Tables reported in the paper.
