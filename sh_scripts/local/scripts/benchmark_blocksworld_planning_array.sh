@@ -70,9 +70,26 @@ while [[ $# -gt 0 ]]; do
 done
 
 mkdir -p ./slurm
-source activate viplan_env
 
-ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Replace direct conda activation with a more script-friendly approach
+# Option 1: Source conda initialization first
+if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+  . "$HOME/miniconda3/etc/profile.d/conda.sh"
+  conda activate viplan_env
+elif [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+  . "$HOME/anaconda3/etc/profile.d/conda.sh"
+  conda activate viplan_env
+else
+  # Option 2: Use the full path to the Python in your environment
+  # Change this path to match your actual conda env location
+  CONDA_ENV_PYTHON="$HOME/miniconda3/envs/viplan_env/bin/python3"
+  # or use conda run as fallback
+  echo "Using conda run as fallback"
+  PYTHON_CMD="conda run -n viplan_env python3"
+fi
+
+# ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_PATH=$PWD
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 
 # Loop through all combinations of model and split
@@ -100,18 +117,36 @@ for MODEL in "${models[@]}"; do
       enumerate_flag="--enumerate_initial_state"
     fi
 
-    python3 -m viplan.experiments.benchmark_blocksworld_plan \
-      --model_name "$MODEL" \
-      --log_level "debug" \
-      --root_path "$ROOT_PATH" \
-      --prompt_path "$PROMPT_PATH" \
-      --domain_file "$DOMAIN_FILE" \
-      --problems_dir "$PROBLEMS_DIR" \
-      --output_dir "$OUTPUT_DIR" \
-      --seed "$SEED" \
-      --enum_batch_size "$ENUM_BATCH_SIZE" \
-      --fail_probability "$FAIL_PROBABILITY" \
-      $gpu_flag $enumerate_flag
+    # Use the appropriate Python command based on initialization method
+    if [[ -z "${PYTHON_CMD:-}" ]]; then
+      # If conda was properly activated
+      python3 -m viplan.experiments.benchmark_blocksworld_plan \
+        --model_name "$MODEL" \
+        --log_level "debug" \
+        --root_path "$ROOT_PATH" \
+        --prompt_path "$PROMPT_PATH" \
+        --domain_file "$DOMAIN_FILE" \
+        --problems_dir "$PROBLEMS_DIR" \
+        --output_dir "$OUTPUT_DIR" \
+        --seed "$SEED" \
+        --enum_batch_size "$ENUM_BATCH_SIZE" \
+        --fail_probability "$FAIL_PROBABILITY" \
+        $gpu_flag $enumerate_flag
+    else
+      # If using conda run
+      $PYTHON_CMD -m viplan.experiments.benchmark_blocksworld_plan \
+        --model_name "$MODEL" \
+        --log_level "debug" \
+        --root_path "$ROOT_PATH" \
+        --prompt_path "$PROMPT_PATH" \
+        --domain_file "$DOMAIN_FILE" \
+        --problems_dir "$PROBLEMS_DIR" \
+        --output_dir "$OUTPUT_DIR" \
+        --seed "$SEED" \
+        --enum_batch_size "$ENUM_BATCH_SIZE" \
+        --fail_probability "$FAIL_PROBABILITY" \
+        $gpu_flag $enumerate_flag
+    fi
 
   done
 done

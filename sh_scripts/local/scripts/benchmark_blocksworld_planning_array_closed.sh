@@ -59,7 +59,25 @@ done
 mkdir -p ./slurm
 source activate viplan_env
 
-ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# Replace direct conda activation with a more script-friendly approach
+# Option 1: Source conda initialization first
+if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+  . "$HOME/miniconda3/etc/profile.d/conda.sh"
+  conda activate viplan_env
+elif [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+  . "$HOME/anaconda3/etc/profile.d/conda.sh"
+  conda activate viplan_env
+else
+  # Option 2: Use the full path to the Python in your environment
+  # Change this path to match your actual conda env location
+  CONDA_ENV_PYTHON="$HOME/miniconda3/envs/viplan_env/bin/python3"
+  # or use conda run as fallback
+  echo "Using conda run as fallback"
+  PYTHON_CMD="conda run -n viplan_env python3"
+fi
+
+# ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ROOT_PATH=$PWD
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 
 # Loop through all combinations of model and split
