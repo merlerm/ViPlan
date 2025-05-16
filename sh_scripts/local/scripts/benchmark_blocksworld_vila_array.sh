@@ -62,7 +62,7 @@ done
 
 mkdir -p ./slurm
 
-mamba activate viplan_env
+# mamba activate viplan_env
 conda activate viplan
 
 ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
