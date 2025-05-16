@@ -45,7 +45,6 @@ echo "Run closed source: $RUN_CLOSED_SOURCE"
 echo "Run predicates:    $RUN_PREDICATES"
 echo "Run vila:          $RUN_VILA"
 echo "Run big:           $RUN_BIG"
-conda activate viplan
 
 # predicates (planning) benchmarks
 if [[ "$RUN_PREDICATES" == "true" ]]; then

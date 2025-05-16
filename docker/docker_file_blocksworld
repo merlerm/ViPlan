@@ -93,5 +93,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
 RUN git pull
+RUN git switch docker
 # Default command
 CMD ["bash"]
