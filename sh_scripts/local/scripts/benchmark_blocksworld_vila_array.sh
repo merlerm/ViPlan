@@ -62,9 +62,9 @@ done
 
 mkdir -p ./slurm
 
-mamba activate viplan_env
+mamba activate ./viplan_env
 
-ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+#ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 
 for MODEL in "${models[@]}"; do

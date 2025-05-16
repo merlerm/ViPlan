@@ -3,8 +3,8 @@
 set -euo pipefail
 
 models=(
-  gpt-4.1
-  gpt-4.1-nano
+  "gpt-4.1"
+  "gpt-4.1-nano"
 )
 
 splits=("simple" "medium" "hard")
@@ -57,9 +57,9 @@ while [[ $# -gt 0 ]]; do
 done
 
 mkdir -p ./slurm
-source activate viplan_env
+source activate ./viplan_env
 
-ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+#ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 
 # Loop through all combinations of model and split

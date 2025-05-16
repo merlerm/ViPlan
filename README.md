@@ -54,6 +54,8 @@ The Blocksworld environment is based on the [Photorealistic Blocksworld](https:/
 ./setup_blocksworld.sh
 ```
 
+Additionally, the libxi package needs to be installed (e.g., `sudo apt-get install libxi`) or available in the cluster.
+
 #### iGibson
 
 Here is the list of specific requirements to use iGibson:

@@ -69,7 +69,8 @@ done
 
 echo "Running $MODEL on problem split $PROBLEM_SPLIT with seed $SEED"
 
-ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+#ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+echo "Root path: $ROOT_PATH"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
 
 # Set problems directory based on problem split.

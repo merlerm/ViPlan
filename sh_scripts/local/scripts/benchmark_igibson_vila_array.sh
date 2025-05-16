@@ -53,7 +53,7 @@ max_steps=(10 20 30)
 JOB_TYPE_IDX=3
 job_id=
 
-mamba activate viplan_env
+mamba activate ./viplan_env
 
 for MODEL in "${models[@]}"; do
   model_short="${MODEL##*/}"

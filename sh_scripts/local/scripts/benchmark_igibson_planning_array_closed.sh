@@ -3,10 +3,9 @@
 set -euo pipefail
 
 models=(
-  gpt-4.1
-  gpt-4.1-nano
+  "gpt-4.1"
+  "gpt-4.1-nano"
 )
-
 splits=("simple" "medium" "hard")
 max_steps=(10 20 30)
 
@@ -45,7 +44,7 @@ done
 NODE=$(hostname -s)
 echo "Running on node: $NODE"
 
-mamba activate viplan_env
+mamba activate ./viplan_env
 
 JOB_TYPE_IDX=2
 port_base=8000

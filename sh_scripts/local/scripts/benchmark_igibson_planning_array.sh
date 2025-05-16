@@ -58,7 +58,7 @@ done
 NODE=$(hostname -s)
 echo "Running on node: $NODE"
 
-mamba activate viplan_env
+mamba activate ./viplan_env
 
 JOB_TYPE_IDX=0
 port_base=8000
