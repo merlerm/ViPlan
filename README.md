@@ -104,6 +104,12 @@ mkdir igibson/data
 tar -xzvf ig_dataset.tar.gz -C ./igibson/data
 ```
 
+Then, still in the iGibson folder, from inside the container run:
+```bash
+python -m igibson.utils.assets_utils --download_assets
+python -m igibson.utils.assets_utils --download_demo_data
+```
+
 As some of the assets are encrypted, you will need to download the key provided by the iGibson team. The key can be requested by filling out the form at [this link](https://docs.google.com/forms/d/e/1FAIpQLScPwhlUcHu_mwBqq5kQzT2VRIRwg_rJvF0IWYBk_LxEZiJIFg/viewform) and then needs to be placed inside the `iGibson` folder under `igibson/data/igibson.key`.
 
 After this, the iGibson environment is ready to be used. For the benchmark, we use a client-server architecture, where the server runs inside the container and the client runs in the main execution environment. Scripts are provided in the `sh_scripts` folder to run the server and the client.
