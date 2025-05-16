@@ -51,10 +51,7 @@ pip install flashinfer-python -i https://flashinfer.ai/whl/cu124/torch2.6/
 The Blocksworld environment is based on the [Photorealistic Blocksworld](https://github.com/IBM/photorealistic-blocksworld) renderer, which is based on Blender. To install the Blender-based renderer, from the root directory of the repository, run the following commands:
 
 ```bash
-wget https://download.blender.org/release/Blender3.0/blender-3.0.0-linux-x64.tar.xz
-tar xf blender-3.0.0-linux-x64.tar.xz
-echo $PWD > $(echo blender*/3.*/python/lib/python*/site-packages/)clevr.pth
-rm blender-3.0.0-linux-x64.tar.xz
+./setup_blocksworld.sh
 ```
 
 #### iGibson
