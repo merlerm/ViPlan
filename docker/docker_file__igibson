@@ -24,23 +24,39 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* 
 
-# # Install Miniconda (much smaller than Anaconda)
-# RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh \
-#     && bash /tmp/miniconda.sh -b -p /opt/conda \
-#     && rm /tmp/miniconda.sh
 
-# Add conda to path
-# ENV PATH="/opt/conda/bin:${PATH}"
-# Make conda activate command available
-# RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
-
-# Set working directory
 WORKDIR /app
 
 RUN git clone --depth 1 --single-branch --branch release_viplan https://github.com/nicoladainese96/iGibson.git ./iGibson --recursive
 RUN git clone https://github.com/StanfordVL/behavior.git
 
 
+
+
+RUN wget --no-check-certificate https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz && \
+    mkdir -p ./iGibson/igibson/data && \
+    tar -xzvf ig_dataset.tar.gz -C ./iGibson/igibson/data && \
+    rm ig_dataset.tar.gz
+    RUN wget https://www.python.org/ftp/python/3.12.1/Python-3.12.1.tgz && \
+    tar -xf Python-3.12.1.tgz && \
+    cd Python-3.12.1 && \
+    ./configure --enable-optimizations && \
+    make -j $(nproc) && \
+    make altinstall && \
+    cd .. && \
+    rm -rf Python-3.12.1 Python-3.12.1.tgz
+
+# Update alternatives to set Python 3.12 as default
+RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python3.12 1 && \
+    update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.12 1
+
+# Install pip for Python 3.12
+RUN curl https://bootstrap.pypa.io/get-pip.py | python3.12
+
+RUN git clone https://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@github.com/merlerm/ViPlan.git 
+# RUN mv iGibson ./ViPlan/iGibson
+# RUN mv behavior ./ViPlan/behavior
+# RUN mv igibson_env ./ViPlan/igibson_env
 RUN python -m venv ./igibson_env && \
     . ./igibson_env/bin/activate && \
     pip install wheel && \
@@ -48,14 +64,11 @@ RUN python -m venv ./igibson_env && \
     pip install -e ./behavior && \
     pip install notebook pyquaternion shapely uvicorn fastapi unified_planning && \
     pip install unified_planning[engines]
-
-RUN wget --no-check-certificate https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz && \
-    mkdir -p ./iGibson/igibson/data && \
-    tar -xzvf ig_dataset.tar.gz -C ./iGibson/igibson/data && \
-    rm ig_dataset.tar.gz
-
-
-
+    
+RUN source igibson_env/bin/activate && \
+    cd ViPlan/ && \
+    pip install fire transformers
+   
 ENV PATH="/app/igibson_env/bin:$PATH"
 # Default command
 CMD ["bash"]
