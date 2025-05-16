@@ -46,8 +46,6 @@ echo "Run predicates:    $RUN_PREDICATES"
 echo "Run vila:          $RUN_VILA"
 echo "Run big:           $RUN_BIG"
 
-conda activate viplan
-conda activate viplan_env
 
 # predicates (planning) benchmarks
 if [[ "$RUN_PREDICATES" == "true" ]]; then
