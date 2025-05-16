@@ -1,0 +1,49 @@
+FROM viplan_blocksworld:toolkit_12_2
+
+# Install basic dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libseccomp-dev \
+    pkg-config \
+    squashfs-tools \
+    cryptsetup \
+    golang \
+    libssl-dev \
+    uuid-dev \
+    libgpgme11-dev \
+    squashfs-tools \
+    fuse-overlayfs \
+    fuse2fs \
+    uidmap \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* 
+
+# Install Apptainer from GitHub release
+RUN export APPTAINER_VERSION=1.4.1 && \
+    wget https://github.com/apptainer/apptainer/releases/download/v${APPTAINER_VERSION}/apptainer_${APPTAINER_VERSION}_amd64.deb && \
+    dpkg -i apptainer_${APPTAINER_VERSION}_amd64.deb && \
+    rm apptainer_${APPTAINER_VERSION}_amd64.deb
+
+WORKDIR /app
+RUN CD ViPlan/
+
+RUN git clone --depth 1 --single-branch --branch release_viplan https://github.com/nicoladainese96/iGibson.git ./iGibson --recursive
+RUN git clone https://github.com/StanfordVL/behavior.git
+
+RUN apptainer cache clean &&\
+    apptainer pull docker://igibson/igibson:latest &&\
+    apptainer exec --nv igibson_latest.sif bash &&\
+    python -m venv --system-site-packages ./igibson_env &&\
+    conda create -n igibson_env  &&\
+    source activate igibson_env &&\
+    source igibson_env/bin/activate &&\
+    pip install -e ./iGibson &&\
+    pip install -e ./behavior &&\
+    pip install notebook pyquaternion shapely uvicorn fastapi unified_planning &&\
+    pip install unified_planning[engines]
+
+RUN wget --no-check-certificate https://storage.googleapis.com/gibson_scenes/ig_dataset.tar.gz && \
+    mkdir -p ./iGibson/igibson/data && \
+    tar -xzvf ig_dataset.tar.gz -C ./iGibson/igibson/data && \
+    rm ig_dataset.tar.gz
+
+
