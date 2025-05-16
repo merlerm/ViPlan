@@ -62,11 +62,7 @@ done
 
 mkdir -p ./slurm
 
-# mamba activate viplan_env
-# conda activate viplan
-# conda activate viplan_env
-source $(conda info --base)/etc/profile.d/conda.sh
-conda activate viplan
+mamba activate viplan_env
 
 ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOMAIN_FILE="data/planning/blocksworld/domain.pddl"
