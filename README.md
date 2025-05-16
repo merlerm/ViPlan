@@ -19,7 +19,7 @@ The ViPlan benchmark is made up of several components, including the main experi
 
 ### Experiments
 
-To run the experiments, you need to install the required packages. We recommend using mamba and provide an environment file for easy installation. The virtual environment requirements can be found at `environment.yml`, and it can be created as prefered. Here we report examples using `mamba` and `conda`.
+To run the experiments, you need to install the required packages. We recommend using mamba and provide an environment file for easy installation. The virtual environment requirements can be found at `environment.yml`, and it can be created as prefered. Here we report examples using `mamba`.
 Using `mamba`:
 
 ```bash
@@ -27,11 +27,13 @@ mamba env create -p ./viplan_env -f environment.yml
 mamba activate ./viplan_env
 ```
 
-Using `conda`:
+> [!WARNING]
+> Using conda is not ufficially supported, but if you want, swap mamba with conda everywhere (also in the sh_scripts) and you should be good.
+>  e.g.
 
 ```bash
-conda env create -f environment.yml
-conda activate viplan_env
+conda env create -p ./viplan_env -f environment.yml
+conda activate ./viplan_env
 ```
 
 If you wish to use Flash Attention, it needs to be installed separately with the following command:
@@ -85,8 +87,6 @@ Then, install the iGibson dependencies from inside the container:
 
 ```bash
 python -m venv --system-site-packages ./igibson_env
-conda create -n igibson_env 
-source activate igibson_env
 source igibson_env/bin/activate
 pip install -e ./iGibson
 pip install -e ./behavior

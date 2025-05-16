@@ -60,6 +60,7 @@ dependencies:
       - backoff
       - anthropic
       - google-genai
+      - tabulate
       # flash-attn must be installed manually with pip install flash-attn --no-build-isolation
       # transformers can also be downgraded to 4.50.3 with pip install transformers==4.50.3 to run Molmo
       # see https://huggingface.co/allenai/Molmo-7B-D-0924/discussions/44

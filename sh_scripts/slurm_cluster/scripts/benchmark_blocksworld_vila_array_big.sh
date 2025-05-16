@@ -86,7 +86,8 @@ fi
 mkdir -p ./slurm
 
 # Load necessary modules and activate the environment.
-mamba activate viplan_env
+module load mamba
+mamba activate ./viplan_env
 
 # Set GPU flag if needed.
 gpu_flag=""
