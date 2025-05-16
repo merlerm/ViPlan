@@ -9,6 +9,7 @@ Mistral-Small-3.1 24B,simple,0.0,0.69,no,0.0,0.01
 Mistral-Small-3.1 24B,medium,0.0,0.83,no,0.0,0.0
 Mistral-Small-3.1 24B,hard,0.0,0.83,no,0.0,0.0
 Molmo 7B,simple,0.0,0.6,no,0.0,0.02
+Molmo 7B,medium,0.04,0.65,no,0.04,0.01
 Molmo 7B,hard,0.0,0.67,no,0.0,0.0
 Phi-4 Multimodal,simple,0.04,0.31,no,0.04,0.02
 Phi-4 Multimodal,medium,0.0,0.22,no,0.0,0.01
