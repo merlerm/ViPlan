@@ -46,6 +46,9 @@ echo "Run predicates:    $RUN_PREDICATES"
 echo "Run vila:          $RUN_VILA"
 echo "Run big:           $RUN_BIG"
 
+
+echo "Running blocksworld benchmarks..."
+echo "WHICH PYTHON $(which python)"
 # predicates (planning) benchmarks
 if [[ "$RUN_PREDICATES" == "true" ]]; then
     if [[ "$RUN_CLOSED_SOURCE" == "true" ]]; then
