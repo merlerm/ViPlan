@@ -82,11 +82,6 @@ This will create a file called `igibson_latest.sif` (it should take approximatel
 apptainer exec --nv igibson_latest.sif bash
 ```
 
-Please notice that to install iGibson, there must be a GPU available. To do that in a SLURM cluster, do for example:
-```bash
-srun --gpus=1 --mem=40GB --pty apptainer exec --nv igibson_latest.sif bash	
-```
-
 Then, install the iGibson dependencies from inside the container:
 
 ```bash
